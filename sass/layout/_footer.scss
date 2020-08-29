@@ -1,0 +1,42 @@
+.footer {
+    background: $color-footer;
+    color: #fff;
+    padding-bottom: 1.5rem;
+
+    h2 {
+        font-family: shrikhandregular, Arial, serif;
+        margin-left: $margin-mostelem;
+        padding-top: 1.5rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-left: $margin-mostelem;
+        font-size: 1rem;
+
+        p {
+            font-family: robotoblack, Arial, serif;
+            font-weight: bold;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+
+        .fas {
+            width: 1.5rem;
+            margin-right:.5rem;
+        }
+
+
+
+        &__legal {
+            margin-top: .5rem;
+            font-family:robotothin,Arial,serif;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}

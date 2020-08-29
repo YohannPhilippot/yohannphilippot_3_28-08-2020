@@ -8,9 +8,37 @@ body img {
   max-width: 100%;
 }
 
+@font-face {
+  font-family: shrikhandregular;
+  src: url("../polices/Shrikhandregular/shrikhand-regular-webfont.eot");
+  src: url("../polices/Shrikhandregular/shrikhand-regular-webfont.eot?#iefix") format("eot"), url("../polices/Shrikhandregular/shrikhand-regular-webfont.woff") format("woff"), url("../polices/Shrikhandregular/shrikhand-regular-webfont.ttf") format("truetype"), url("../polices/Shrikhandregular/shrikhand-regular-webfont.svg#shrikhandregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: robotoblack;
+  src: url("../polices/roboto/Roboto-Black-webfont.eot");
+  src: url("../polices/roboto/Roboto-Black-webfont.eot?#iefix") format("embedded-opentype"), url("../polices/roboto/Roboto-Black-webfont.woff") format("woff"), url("../polices/roboto/Roboto-Black-webfont.ttf") format("truetype"), url("../polices/roboto/Roboto-Black-webfont.svg#robotoblack") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: robotobold;
+  src: url("../polices/Roboto-Bold-webfont.eot");
+  src: url("../polices/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../polices/Roboto-Bold-webfont.woff2") format("woff2"), url("../polices/Roboto-Bold-webfont.woff") format("woff"), url("../polices/Roboto-Bold-webfont.ttf") format("truetype"), url("../polices/Roboto-Bold-webfont.svg#robotobold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: robotolight;
+  src: url("../polices/roboto/Roboto-Light-webfont.eot");
+  src: url("../polices/roboto/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../polices/roboto/Roboto-Light-webfont.woff2") format("woff2"), url("../polices/roboto/Roboto-Light-webfont.woff") format("woff"), url("../polices/roboto/Roboto-Light-webfont.ttf") format("truetype"), url("../polices/roboto/Roboto-Light-webfont.svg#robotolight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 .btn {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: 2rem;
   border: none;
   background-image: linear-gradient(#FF79da, #9356DC);
@@ -42,6 +70,7 @@ header img {
 }
 .localisation p {
   font-size: 1rem;
+  font-family: robotoblack, Arial, serif;
 }
 
 .presentation {
@@ -52,12 +81,15 @@ header img {
   font-size: 1.5rem;
   margin-right: 1rem;
   margin-left: 1rem;
+  font-family: robotolight, Arial, serif;
 }
 .presentation h2 {
   margin-top: 0;
   padding-top: 2rem;
   font-weight: bold;
   font-size: 2rem;
+  font-family: robotolight, Arial, serif;
+  font-family: robotobold, Arial, serif;
   margin-bottom: 1.5rem;
 }
 
@@ -65,9 +97,10 @@ header img {
   display: flex;
   margin-left: 1rem;
   margin-right: 1rem;
+  padding: 1rem 0 1rem 0;
   align-items: center;
   background: #f6f6f6;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   box-shadow: 10px 10px 10px #eaeaea;
   margin-bottom: 2rem;
 }
@@ -75,6 +108,10 @@ header img {
   margin: 0;
   width: 1.5rem;
   text-align: center;
+  color: #959595;
+}
+.instructions__element__icons--pink {
+  color: #9356DC;
 }
 .instructions__element__text {
   display: flex;
@@ -91,6 +128,8 @@ header img {
 }
 .instructions__element__content {
   margin-left: 2rem;
+  font-family: robotoblack, Arial, serif;
+  font-weight: bold;
 }
 .instructions__element--darker {
   background-color: #f5edff;
@@ -100,6 +139,8 @@ header img {
   padding-top: 2rem;
   font-weight: bold;
   font-size: 2rem;
+  font-family: robotolight, Arial, serif;
+  font-family: robotobold, Arial, serif;
   margin-left: 0.5rem;
 }
 
@@ -119,28 +160,83 @@ header img {
   background-color: #fff;
   border-radius: 0 0 1.5rem 1.5rem;
   justify-content: space-between;
+  padding-bottom: 1rem;
 }
 .restaurants__name {
   margin-left: 1.5rem;
 }
 .restaurants__name h3 {
   font-size: 1.5rem;
+  font-family: robotoblack, Arial, serif;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-style: normal;
+}
+.restaurants__name p {
+  font-family: robotolight, Arial, serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
 }
 .restaurants__fav {
   font-size: 3rem;
   margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
 }
 .restaurants img {
   border-radius: 1.5rem 1.5rem 0 0;
 }
+.restaurants .picture_cut {
+  border-radius: 1.5rem 1.5rem 0 0;
+  overflow: hidden;
+  height: 350px;
+}
 .restaurants .picture_cut img {
-  clip: rect(top 50%);
+  margin-top: -120px;
 }
 .restaurants h2 {
   margin-top: 0;
   padding-top: 2rem;
   font-weight: bold;
   font-size: 2rem;
+  font-family: robotolight, Arial, serif;
+  font-family: robotobold, Arial, serif;
+}
+
+.footer {
+  background: #353535;
+  color: #fff;
+  padding-bottom: 1.5rem;
+}
+.footer h2 {
+  font-family: shrikhandregular, Arial, serif;
+  margin-left: 1.5rem;
+  padding-top: 1.5rem;
+}
+.footer__item {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+.footer__item p {
+  font-family: robotoblack, Arial, serif;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.footer__item .fas {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+.footer__item__legal {
+  margin-top: 0.5rem;
+  font-family: robotothin, Arial, serif;
+}
+.footer__item__legal a {
+  text-decoration: none;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
