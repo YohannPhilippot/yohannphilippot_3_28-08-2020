@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  box-sizing: border-box;
+}
+body img {
+  max-width: 100%;
+}
+
+.btn {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 2rem;
+  border: none;
+  background-image: linear-gradient(#FF79da, #9356DC);
+  color: #fff;
+  margin-bottom: 1.5rem;
+  box-shadow: 10px 10px 10px #eaeaea;
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  margin-bottom: 0;
+}
+header img {
+  width: 50%;
+}
+
+.localisation {
+  display: flex;
+  margin-top: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+}
+.localisation .fas {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+.localisation p {
+  font-size: 1rem;
+}
+
+.presentation {
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.presentation__text {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.presentation h2 {
+  margin-top: 0;
+  padding-top: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.instructions__element {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-items: center;
+  background: #f6f6f6;
+  border-radius: 1.5rem;
+  box-shadow: 10px 10px 10px #eaeaea;
+  margin-bottom: 2rem;
+}
+.instructions__element__icons {
+  margin: 0;
+  width: 1.5rem;
+  text-align: center;
+}
+.instructions__element__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-left: -0.5rem;
+}
+.instructions__element__content {
+  margin-left: 2rem;
+}
+.instructions__element--darker {
+  background-color: #f5edff;
+}
+.instructions h2 {
+  margin-top: 0;
+  padding-top: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.restaurants__choice {
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+.restaurants__description {
+  display: flex;
+  background-color: #fff;
+  border-radius: 0 0 1.5rem 1.5rem;
+  justify-content: space-between;
+}
+.restaurants__name {
+  margin-left: 1.5rem;
+}
+.restaurants__name h3 {
+  font-size: 1.5rem;
+}
+.restaurants__fav {
+  font-size: 3rem;
+  margin-right: 1.5rem;
+}
+.restaurants img {
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+.restaurants .picture_cut img {
+  clip: rect(top 50%);
+}
+.restaurants h2 {
+  margin-top: 0;
+  padding-top: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

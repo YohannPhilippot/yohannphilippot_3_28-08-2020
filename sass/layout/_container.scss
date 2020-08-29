@@ -1,0 +1,113 @@
+.localisation{
+    display:flex;
+    margin-top:0;
+    justify-content:center;
+    align-items:center;
+    background-color:$color-geoloc;
+        .fas{
+            font-size:$icon-size;
+            margin-right:1rem;
+        }
+        p{
+            font-size:$icon-size;
+        }
+      
+}
+
+.presentation {
+    text-align: center;
+    background-color: $color-bg;
+
+    &__text {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    h2 {
+        @include section_title;
+        margin-bottom: $margin-mostelem;
+    }
+}
+
+.instructions {
+    &__element {
+        display: flex;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        align-items: center;
+        background: $color-bg;
+        border-radius: 1.5rem;
+        box-shadow: 10px 10px 10px $color-geoloc;
+        margin-bottom: 2rem;
+
+        &__icons {
+            margin: 0;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        &__text {
+            @include work_list;
+        }
+
+        &__content {
+            margin-left: 2rem;
+        }
+        &--darker{
+            background-color:$color-lastbtn;
+        }
+    }
+
+    h2 {
+        @include section_title;
+        margin-left:.5rem;
+    }
+}
+.restaurants {
+    background-color: $color-bg;
+    padding-right: .5rem;
+    padding-left: .5rem;
+
+    &__choice {
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        margin-bottom: $margin-mostelem;
+    }
+
+    &__description {
+        display: flex;
+        background-color: #fff;
+        border-radius: 0 0 1.5rem 1.5rem;
+        justify-content: space-between;
+    }
+
+    &__name {
+        margin-left: $margin-mostelem;
+
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__fav {
+        font-size: 3rem;
+        margin-right: $margin-mostelem;
+    }
+
+    img {
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .picture_cut{
+        img{
+            clip:rect(top 50%);
+        }
+    }
+    
+
+    h2 {
+        @include section_title;
+    }
+}

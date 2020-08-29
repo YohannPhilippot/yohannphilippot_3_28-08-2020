@@ -1,0 +1,10 @@
+.btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 2rem;
+    border: none;
+    background-image: linear-gradient($color-secondary,$color-primary);
+    color: #fff;
+    margin-bottom: 1.5rem;
+    box-shadow: 10px 10px 10px $color-geoloc;
+}
