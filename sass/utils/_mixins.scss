@@ -23,25 +23,26 @@
 @mixin margin_menu {
     margin-right: 1rem;
     margin-left: 1rem;
-    margin-bottom: 2.5rem;
+    padding-top:1rem;
 }
 
 @mixin menu_title {
     font-family: robotolight, Arial, serif;
     font-size: 1rem;
+    
 }
 
 @mixin menu_choice {
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     height: 75px;
     padding-left: .5rem;
     background: #fff;
     border-radius: 1.5rem;
     position: relative;
     margin-bottom: 1rem;
-    
+    box-shadow: 10px 10px 10px $color-geoloc;
 }
 
 @mixin menu_name {

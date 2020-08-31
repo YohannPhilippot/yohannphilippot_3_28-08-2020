@@ -74,6 +74,12 @@
         margin-left:.5rem;
     }
 }
+
+a{
+    font-style:normal;
+    color:#000;
+    text-decoration:none;
+}
 .restaurants {
     background-color: $color-bg;
     padding-right: .5rem;
@@ -180,6 +186,7 @@
 
         h2 {
             font-family: shrikhandregular, Arial, serif;
+            margin-bottom:0;
         }
     }
 

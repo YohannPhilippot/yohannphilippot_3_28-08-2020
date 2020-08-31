@@ -10,17 +10,6 @@ body img {
   max-width: 100%;
 }
 
-/*style bastille.html
-.body__bastille{
-    margin:0;
-    padding:0;
-    width:500px;
-    box-sizing:border-box;
-
-    img{
-        max-width:100%;
-    }
-}*/
 @font-face {
   font-family: shrikhandregular;
   src: url("../polices/Shrikhandregular/shrikhand-regular-webfont.eot");
@@ -83,13 +72,17 @@ header h1 {
 }
 .header__menu h1 {
   position: absolute;
+  z-index: 1;
   text-align: center;
   padding-top: 1rem;
 }
 .header__menu h1 img {
   position: relative;
-  z-index: 2;
   max-width: 50%;
+}
+.header__menu a {
+  position: relative;
+  z-index: 2;
 }
 .header__menu i {
   font-size: 1rem;
@@ -186,6 +179,12 @@ header h1 {
   margin-left: 0.5rem;
 }
 
+a {
+  font-style: normal;
+  color: #000;
+  text-decoration: none;
+}
+
 .restaurants {
   background-color: #f6f6f6;
   padding-right: 0.5rem;
@@ -276,7 +275,7 @@ header h1 {
   margin-top: 1.5rem;
   margin-right: 1rem;
   margin-left: 1rem;
-  margin-bottom: 2.5rem;
+  padding-top: 1rem;
 }
 .menu__title .restaurants__fav {
   margin-top: 0;
@@ -285,11 +284,12 @@ header h1 {
 }
 .menu__title h2 {
   font-family: shrikhandregular, Arial, serif;
+  margin-bottom: 0;
 }
 .menu .entree {
   margin-right: 1rem;
   margin-left: 1rem;
-  margin-bottom: 2.5rem;
+  padding-top: 1rem;
 }
 .menu .entree h3 {
   font-family: robotolight, Arial, serif;
@@ -308,6 +308,7 @@ header h1 {
   border-radius: 1.5rem;
   position: relative;
   margin-bottom: 1rem;
+  box-shadow: 10px 10px 10px #eaeaea;
 }
 .menu .entree__choice__name {
   font-family: robotoblack, Arial, serif;
@@ -332,7 +333,7 @@ header h1 {
 .dish {
   margin-right: 1rem;
   margin-left: 1rem;
-  margin-bottom: 2.5rem;
+  padding-top: 1rem;
 }
 .dish h3 {
   font-family: robotolight, Arial, serif;
@@ -351,6 +352,7 @@ header h1 {
   border-radius: 1.5rem;
   position: relative;
   margin-bottom: 1rem;
+  box-shadow: 10px 10px 10px #eaeaea;
 }
 .dish__choice__name {
   font-family: robotoblack, Arial, serif;
@@ -375,7 +377,7 @@ header h1 {
 .dessert {
   margin-right: 1rem;
   margin-left: 1rem;
-  margin-bottom: 2.5rem;
+  padding-top: 1rem;
 }
 .dessert h3 {
   font-family: robotolight, Arial, serif;
@@ -394,6 +396,7 @@ header h1 {
   border-radius: 1.5rem;
   position: relative;
   margin-bottom: 1rem;
+  box-shadow: 10px 10px 10px #eaeaea;
 }
 .dessert__choice__name {
   font-family: robotoblack, Arial, serif;
