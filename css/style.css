@@ -77,21 +77,21 @@ header h1 {
 }
 
 /*style bastille.html*/
-.header__bastille {
+.header__menu {
   display: flex;
   align-items: center;
 }
-.header__bastille h1 {
+.header__menu h1 {
   position: absolute;
   text-align: center;
   padding-top: 1rem;
 }
-.header__bastille h1 img {
+.header__menu h1 img {
   position: relative;
   z-index: 2;
   max-width: 50%;
 }
-.header__bastille i {
+.header__menu i {
   font-size: 1rem;
   margin-top: 1rem;
   margin-left: 1.5rem;
@@ -250,8 +250,16 @@ header h1 {
 }
 
 /*style bastille*/
-.main__bastille {
+.main__menu {
   margin-top: 1rem;
+}
+.main__menu .cut {
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+}
+.main__menu .cut img {
+  margin-top: -120px;
 }
 
 .menu {
@@ -302,6 +310,8 @@ header h1 {
 .menu .entree__choice__name {
   font-family: robotoblack, Arial, serif;
   margin-top: 1rem;
+  line-height: 100%;
+  margin-bottom: 0.2em;
 }
 .menu .entree__choice__description {
   font-family: robotolight, Arial, serif;
@@ -340,6 +350,8 @@ header h1 {
 .dish__choice__name {
   font-family: robotoblack, Arial, serif;
   margin-top: 1rem;
+  line-height: 100%;
+  margin-bottom: 0.2em;
 }
 .dish__choice__description {
   font-family: robotolight, Arial, serif;
@@ -378,6 +390,8 @@ header h1 {
 .dessert__choice__name {
   font-family: robotoblack, Arial, serif;
   margin-top: 1rem;
+  line-height: 100%;
+  margin-bottom: 0.2em;
 }
 .dessert__choice__description {
   font-family: robotolight, Arial, serif;

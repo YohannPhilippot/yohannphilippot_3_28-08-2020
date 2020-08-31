@@ -39,11 +39,14 @@
     border-radius: 1.5rem;
     position: relative;
     margin-bottom: 1rem;
+    
 }
 
 @mixin menu_name {
     font-family: robotoblack, Arial, serif;
     margin-top: 1rem;
+    line-height:100%;
+    margin-bottom:.2em;
 }
 
 @mixin menu_description {
