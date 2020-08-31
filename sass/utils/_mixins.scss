@@ -20,9 +20,10 @@
     margin-left:-0.5rem;
 }
 
-@mixin margin_menu{
-    margin-right:1rem;
-    margin-left:1rem;
+@mixin margin_menu {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 2.5rem;
 }
 
 @mixin menu_title {
@@ -33,6 +34,7 @@
 @mixin menu_choice {
     display: flex;
     justify-content: space-between;
+    align-items:center;
     height: 75px;
     padding-left: .5rem;
     background: #fff;
@@ -46,13 +48,14 @@
     font-family: robotoblack, Arial, serif;
     margin-top: 1rem;
     line-height:100%;
-    margin-bottom:.2em;
+    margin-bottom:.3em;
 }
 
 @mixin menu_description {
     font-family: robotolight, Arial, serif;
     font-size: .9rem;
     margin-bottom: 1rem;
+    line-height:.9rem;
 }
 
 @mixin menu_price {

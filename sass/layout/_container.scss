@@ -143,7 +143,7 @@
         font-family:robotobold, Arial, serif;
     }
 }
-/*style bastille*/
+/*style menu*/
 .main__menu {
     margin-top: 1rem;
 
@@ -185,7 +185,7 @@
 
     .entree {
         @include margin_menu;
-        margin-bottom:2.5rem;
+        
         h3 {
             @include menu_title;
 
