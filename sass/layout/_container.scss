@@ -11,23 +11,21 @@
         p{
             font-size:$icon-size;
             font-family:robotoblack, Arial, serif;
-        }
-      
+        }      
 }
 
 .presentation {
     text-align: center;
     background-color: $color-bg;
-
     &__text {    
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-right: 1rem;
         margin-left: 1rem;
         font-family:robotolight, Arial, serif;
     }
-
     h2 {
         @include section_title;
+        font-size:$title-size;
         font-family:robotobold,Arial,serif;
         margin-bottom: $margin-mostelem;
     }
@@ -70,7 +68,8 @@
     }
 
     h2 {
-        @include section_title;
+        @include section_title;     
+        font-size:$title-size;
         font-family:robotobold, Arial, serif;
         margin-left:.5rem;
     }
@@ -79,6 +78,7 @@
     background-color: $color-bg;
     padding-right: .5rem;
     padding-left: .5rem;
+    padding-bottom:$margin-mostelem;
 
         &__choice {
         margin: 0;
@@ -100,7 +100,7 @@
             margin-left: $margin-mostelem;
 
             h3 {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-family: robotoblack, Arial, serif;
                 margin-bottom: 0;
                 font-weight:bold;     
@@ -110,8 +110,8 @@
             p {
                 font-family: robotolight, Arial, serif;
                 font-style:normal;
-                font-size: 1.5rem;
-                margin-top: .5rem;;
+                font-size: 1rem;
+                margin-top: .5rem;
             }
         }
 
@@ -129,17 +129,136 @@
         .picture_cut {
             border-radius: 1.5rem 1.5rem 0 0;
             overflow: hidden;
-            height: 350px;
+            height: 250px;
+            margin:0;
 
             img {
                 margin-top: -120px;
             }
         }
     
-
-
     h2 {
         @include section_title;
+        font-size:$title-size;
         font-family:robotobold, Arial, serif;
     }
+}
+/*style bastille*/
+.main__bastille{
+    margin-top:1rem;
+}
+
+.menu {
+    background: $color-menu;
+    margin-top: -4rem;
+    position:relative;
+    z-index:1;
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $margin-mostelem;
+        @include margin_menu;
+
+        .restaurants__fav {
+            margin-top: 0;
+            margin-right: 2rem;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-family: shrikhandregular, Arial, serif;
+        }
+    }
+
+    .entree {
+        @include margin_menu;
+        margin-bottom:2.5rem;
+        h3 {
+            @include menu_title;
+
+            span {
+                border-bottom: 3px solid $color-tertiary;
+            }
+        }
+
+        &__choice {
+            @include menu_choice;
+
+            &__name {
+                @include menu_name;
+            }
+
+            &__description {
+                @include menu_description;
+            }
+
+            &__price {
+                @include menu_price;
+            }
+        }
+    }
+}
+
+.dish {
+    @include margin_menu;
+
+    h3 {
+        @include menu_title;
+
+        span {
+            border-bottom: 3px solid $color-tertiary;
+        }
+    }
+
+    &__choice {
+        @include menu_choice;
+
+        &__name {
+            @include menu_name;
+        }
+
+        &__description {
+            @include menu_description;
+        }
+
+        &__price {
+            @include menu_price;
+        }
+    }
+}
+
+.dessert{
+    @include margin_menu;
+
+    h3 {
+        @include menu_title;
+
+        span {
+            border-bottom: 3px solid $color-tertiary;
+        }
+    }
+
+    &__choice {
+        @include menu_choice;
+
+        &__name {
+            @include menu_name;
+        }
+
+        &__description {
+            @include menu_description;
+        }
+
+        &__price {
+            @include menu_price;
+        }
+    }
+}
+
+.order{
+    text-align:center;
 }

@@ -1,9 +1,33 @@
+/*style index.html*/
+
 header{
     text-align:center;
     h1{
-        margin-bottom:0;
+        margin-bottom:.5rem;
+        font-family:shrikhandregular, Arial, serif;
+        font-size:1.5rem;
     }
-    img{
-        width:50%;
+}   
+
+/*style bastille.html*/
+.header__bastille{
+    display:flex;
+    align-items:center;
+    h1{
+        position:absolute;
+        text-align:center;
+        padding-top:1rem;
+        img{
+            position:relative;
+            z-index:2;
+            max-width:50%;
+        }
+    }
+   
+    i{
+        font-size:1rem;
+        margin-top:1rem;
+        margin-left:$margin-mostelem;
+        
     }
 }

@@ -1,13 +1,26 @@
+/*style index.html*/
 body {
   margin: 0;
   padding: 0;
   width: 500px;
   box-sizing: border-box;
+  width: 100%;
 }
 body img {
   max-width: 100%;
 }
 
+/*style bastille.html
+.body__bastille{
+    margin:0;
+    padding:0;
+    width:500px;
+    box-sizing:border-box;
+
+    img{
+        max-width:100%;
+    }
+}*/
 @font-face {
   font-family: shrikhandregular;
   src: url("../polices/Shrikhandregular/shrikhand-regular-webfont.eot");
@@ -45,16 +58,43 @@ body img {
   color: #fff;
   margin-bottom: 1.5rem;
   box-shadow: 10px 10px 10px #eaeaea;
+  font-family: robotoblack, Arial, serif;
+}
+.btn--menu {
+  width: 200px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
+/*style index.html*/
 header {
   text-align: center;
 }
 header h1 {
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
+  font-family: shrikhandregular, Arial, serif;
+  font-size: 1.5rem;
 }
-header img {
-  width: 50%;
+
+/*style bastille.html*/
+.header__bastille {
+  display: flex;
+  align-items: center;
+}
+.header__bastille h1 {
+  position: absolute;
+  text-align: center;
+  padding-top: 1rem;
+}
+.header__bastille h1 img {
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+}
+.header__bastille i {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
 }
 
 .localisation {
@@ -78,7 +118,7 @@ header img {
   background-color: #f6f6f6;
 }
 .presentation__text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-right: 1rem;
   margin-left: 1rem;
   font-family: robotolight, Arial, serif;
@@ -87,8 +127,9 @@ header img {
   margin-top: 0;
   padding-top: 2rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: robotolight, Arial, serif;
+  font-size: 1.5rem;
   font-family: robotobold, Arial, serif;
   margin-bottom: 1.5rem;
 }
@@ -138,8 +179,9 @@ header img {
   margin-top: 0;
   padding-top: 2rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: robotolight, Arial, serif;
+  font-size: 1.5rem;
   font-family: robotobold, Arial, serif;
   margin-left: 0.5rem;
 }
@@ -148,6 +190,7 @@ header img {
   background-color: #f6f6f6;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 .restaurants__choice {
   margin: 0;
@@ -166,7 +209,7 @@ header img {
   margin-left: 1.5rem;
 }
 .restaurants__name h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: robotoblack, Arial, serif;
   margin-bottom: 0;
   font-weight: bold;
@@ -175,7 +218,7 @@ header img {
 .restaurants__name p {
   font-family: robotolight, Arial, serif;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
 .restaurants__fav {
@@ -190,7 +233,8 @@ header img {
 .restaurants .picture_cut {
   border-radius: 1.5rem 1.5rem 0 0;
   overflow: hidden;
-  height: 350px;
+  height: 250px;
+  margin: 0;
 }
 .restaurants .picture_cut img {
   margin-top: -120px;
@@ -199,26 +243,177 @@ header img {
   margin-top: 0;
   padding-top: 2rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: robotolight, Arial, serif;
+  font-size: 1.5rem;
   font-family: robotobold, Arial, serif;
 }
 
+/*style bastille*/
+.main__bastille {
+  margin-top: 1rem;
+}
+
+.menu {
+  background: #f6f6f6;
+  margin-top: -4rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+.menu__title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.menu__title .restaurants__fav {
+  margin-top: 0;
+  margin-right: 2rem;
+  font-size: 2.5rem;
+}
+.menu__title h2 {
+  font-family: shrikhandregular, Arial, serif;
+}
+.menu .entree {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 2.5rem;
+}
+.menu .entree h3 {
+  font-family: robotolight, Arial, serif;
+  font-size: 1rem;
+}
+.menu .entree h3 span {
+  border-bottom: 3px solid #99e2d0;
+}
+.menu .entree__choice {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  padding-left: 0.5rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.menu .entree__choice__name {
+  font-family: robotoblack, Arial, serif;
+  margin-top: 1rem;
+}
+.menu .entree__choice__description {
+  font-family: robotolight, Arial, serif;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.menu .entree__choice__price {
+  margin-right: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0;
+  font-family: robotoblack, Arial, serif;
+}
+
+.dish {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.dish h3 {
+  font-family: robotolight, Arial, serif;
+  font-size: 1rem;
+}
+.dish h3 span {
+  border-bottom: 3px solid #99e2d0;
+}
+.dish__choice {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  padding-left: 0.5rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.dish__choice__name {
+  font-family: robotoblack, Arial, serif;
+  margin-top: 1rem;
+}
+.dish__choice__description {
+  font-family: robotolight, Arial, serif;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.dish__choice__price {
+  margin-right: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0;
+  font-family: robotoblack, Arial, serif;
+}
+
+.dessert {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.dessert h3 {
+  font-family: robotolight, Arial, serif;
+  font-size: 1rem;
+}
+.dessert h3 span {
+  border-bottom: 3px solid #99e2d0;
+}
+.dessert__choice {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  padding-left: 0.5rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.dessert__choice__name {
+  font-family: robotoblack, Arial, serif;
+  margin-top: 1rem;
+}
+.dessert__choice__description {
+  font-family: robotolight, Arial, serif;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.dessert__choice__price {
+  margin-right: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0;
+  font-family: robotoblack, Arial, serif;
+}
+
+.order {
+  text-align: center;
+}
+
 .footer {
+  position: relative;
   background: #353535;
   color: #fff;
   padding-bottom: 1.5rem;
 }
 .footer h2 {
   font-family: shrikhandregular, Arial, serif;
+  font-size: 1.2rem;
   margin-left: 1.5rem;
   padding-top: 1.5rem;
+  margin-top: 0;
 }
 .footer__item {
   display: flex;
   align-items: center;
   margin-left: 1.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .footer__item p {
   font-family: robotoblack, Arial, serif;

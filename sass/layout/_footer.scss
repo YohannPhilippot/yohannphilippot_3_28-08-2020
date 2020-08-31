@@ -1,19 +1,22 @@
 .footer {
+    position:relative;
     background: $color-footer;
     color: #fff;
     padding-bottom: 1.5rem;
 
     h2 {
         font-family: shrikhandregular, Arial, serif;
+        font-size:1.2rem;
         margin-left: $margin-mostelem;
         padding-top: 1.5rem;
+        margin-top:0;
     }
 
     &__item {
         display: flex;
         align-items: center;
         margin-left: $margin-mostelem;
-        font-size: 1rem;
+        font-size: .8rem;
 
         p {
             font-family: robotoblack, Arial, serif;
