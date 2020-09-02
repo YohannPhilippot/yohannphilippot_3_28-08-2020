@@ -80,73 +80,80 @@ a{
     color:#000;
     text-decoration:none;
 }
+
+
 .restaurants {
     background-color: $color-bg;
     padding-right: .5rem;
     padding-left: .5rem;
-    padding-bottom:$margin-mostelem;
+    padding-bottom: $margin-mostelem;
 
-        &__choice {
+    &__choice {
         margin: 0;
         padding: 0;
         border-radius: 50%;
         margin-bottom: $margin-mostelem;
+    }
+
+
+    &__description {
+        display: flex;
+        background-color: #fff;
+        border-radius: 0 0 1.5rem 1.5rem;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    &__name {
+        margin-left: $margin-mostelem;
+
+        h3 {
+            font-size: 1rem;
+            font-family: robotoblack, Arial, serif;
+            margin-bottom: 0;
+            font-weight: bold;
+            font-style: normal;
         }
 
-
-        &__description {
-            display: flex;
-            background-color: #fff;
-            border-radius: 0 0 1.5rem 1.5rem;
-            justify-content: space-between;
-            padding-bottom:1rem;
+        p {
+            font-family: robotolight, Arial, serif;
+            font-style: normal;
+            font-size: 1rem;
+            margin-top: .5rem;
         }
+    }
 
-        &__name {
-            margin-left: $margin-mostelem;
+    &__fav {
+        font-size: 3rem;
+        margin-right: $margin-mostelem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
 
-            h3 {
-                font-size: 1rem;
-                font-family: robotoblack, Arial, serif;
-                margin-bottom: 0;
-                font-weight:bold;     
-                font-style:normal;
-            }
-
-            p {
-                font-family: robotolight, Arial, serif;
-                font-style:normal;
-                font-size: 1rem;
-                margin-top: .5rem;
-            }
+        i {
+            color: red;          
         }
+    }
 
-        &__fav {
-            font-size: 3rem;
-            margin-right: $margin-mostelem;
-            margin-top:1.5rem;
-            margin-bottom:0;
-        }
+
+    img {
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .picture_cut {
+        border-radius: 1.5rem 1.5rem 0 0;
+        overflow: hidden;
+        height: 250px;
+        margin: 0;
 
         img {
-            border-radius: 1.5rem 1.5rem 0 0;
+            margin-top: -120px;
         }
+    }
 
-        .picture_cut {
-            border-radius: 1.5rem 1.5rem 0 0;
-            overflow: hidden;
-            height: 250px;
-            margin:0;
-
-            img {
-                margin-top: -120px;
-            }
-        }
-    
     h2 {
         @include section_title;
-        font-size:$title-size;
-        font-family:robotobold, Arial, serif;
+        font-size: $title-size;
+        font-family: robotobold, Arial, serif;
     }
 }
 /*style menu*/
@@ -166,8 +173,8 @@ a{
 .menu {
     background: $color-menu;
     margin-top: -4rem;
-    position:relative;
-    z-index:1;
+    position: relative;
+    z-index: 1;
     width: 100%;
     border-radius: 1.5rem 1.5rem 0 0;
 
@@ -186,13 +193,15 @@ a{
 
         h2 {
             font-family: shrikhandregular, Arial, serif;
-            margin-bottom:0;
+            margin-bottom: 0;
         }
     }
 
     .entree {
         @include margin_menu;
-        
+        animation: entree 1500ms 200ms ease-out both;
+        z-index: -1;
+
         h3 {
             @include menu_title;
 
@@ -203,6 +212,26 @@ a{
 
         &__choice {
             @include menu_choice;
+            z-index: 2;
+
+
+            &:hover {
+                .checked {
+                    animation: checked 1000ms ease-in-out forwards alternate 2;
+                }
+
+                .entree__choice__price {
+                    animation: price 1000ms ease-in-out alternate 2 forwards;
+                }
+
+                i {
+                    animation: iconspin 1000ms ease-in-out forwards;
+                }
+
+              
+            }
+
+
 
             &__name {
                 @include menu_name;
@@ -215,12 +244,64 @@ a{
             &__price {
                 @include menu_price;
             }
+
+            .checked {
+                @include checked;
+
+                i {
+                    font-size: 1.5rem;
+                    color: #fff;
+                }
+            }
         }
+    }
+}
+@keyframes iconspin{
+    from{
+        transform:rotateZ(0deg);
+    }
+    to{
+        transform:rotateZ(360deg);
+    }
+}
+@keyframes price{
+    0%{
+        transform:translateX(0);
+        
+    }
+    100%{
+        transform:translateX(-94px);
+    }
+}
+
+@keyframes checked{
+    0%{
+        transform:translateX(-150px), scaleX(0);      
+    }
+    1% {
+        transform: scaleX(1);
+    }
+    100% {
+        
+        transform: translateX(0);
+    }
+}
+
+
+
+@keyframes entree {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
 
 .dish {
     @include margin_menu;
+    animation: dish 1500ms 400ms ease-in-out both;
 
     h3 {
         @include menu_title;
@@ -233,22 +314,60 @@ a{
     &__choice {
         @include menu_choice;
 
+        &:hover {
+            .checked {
+                animation: checked 1000ms ease-in-out forwards alternate 2;
+            }
+
+            .dish__choice__price {
+                animation: price 1000ms ease-in-out alternate 2 forwards;
+            }
+
+            i {
+                animation: iconspin 1000ms ease-in-out forwards;
+            }
+            
+            
+        }
+
         &__name {
             @include menu_name;
+            
         }
 
         &__description {
             @include menu_description;
+            
         }
 
         &__price {
             @include menu_price;
+        }
+
+        .checked {
+            @include checked;
+
+            i {
+                font-size: 1.5rem;
+                color: #fff;
+            }
         }
     }
 }
 
-.dessert{
+@keyframes dish {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.dessert {
     @include margin_menu;
+    animation: dessert 1500ms 600ms ease-in-out both;
 
     h3 {
         @include menu_title;
@@ -261,6 +380,20 @@ a{
     &__choice {
         @include menu_choice;
 
+        &:hover {
+            .checked {
+                animation: checked 1000ms ease-in-out forwards alternate 2;
+            }
+
+            .dessert__choice__price {
+                animation: price 1000ms ease-in-out alternate 2 forwards;
+            }
+
+            i {
+                animation: iconspin 1000ms ease-in-out forwards;
+            }
+        }
+
         &__name {
             @include menu_name;
         }
@@ -272,9 +405,118 @@ a{
         &__price {
             @include menu_price;
         }
+
+        .checked {
+            @include checked;
+
+            i {
+                font-size: 1.5rem;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@keyframes dessert {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
 
 .order{
     text-align:center;
+}
+
+#loader {
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .barre {
+        display: inline-block;
+        width: 20px;
+        height: 50px;
+        background-color: #ffffff;
+        border-radius: 10%;
+        animation-name: loading;
+        animation-duration: 2s;
+        animation-direction: cubic-bezier(.7, .4, .2, 1.3);
+        transform-origin: bottom center;
+        position: relative;
+
+        &--1 {
+            animation-delay: 0.1s;
+        }
+
+        &--2 {
+            animation-delay: 0.25s;
+        }
+
+        &--3 {
+            animation-delay: 0.4s;
+        }
+
+        &--4 {
+            animation-delay: 0.55s;
+        }
+
+        &--5 {
+            animation-delay: 0.7s;
+        }
+
+        &--6 {
+            animation-delay: 0.85s;
+        }
+
+        &--7 {
+            animation-delay: 1s;
+        }
+    }
+
+    @keyframes loading {
+        0% {
+            transform: translateY(-50px);
+            background-color: $color-primary;
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(50px);
+            background-color: $color-secondary;
+            opacity: 1;
+        }
+
+        85% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-50px);
+            background-color: $color-tertiary;
+            opacity: 0;
+        }
+    }
+}
+#page {
+    opacity: 0;
+    animation-name: body;
+    animation-duration: 2.5s;
+    animation-delay: 2.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes body {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

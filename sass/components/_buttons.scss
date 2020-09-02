@@ -6,12 +6,19 @@
     background-image: linear-gradient($color-secondary,$color-primary);
     color: #fff;
     margin-bottom: 1.5rem;
-    box-shadow: 10px 10px 10px $color-geoloc;
-    font-family:robotoblack, Arial, serif;
-    &--menu{
-        width:200px;
-        margin-top:2rem;
-        margin-bottom:4rem;
+    box-shadow: 5px 5px 8px $color-btnshadow;
+    font-family: robotoblack, Arial, serif;
+    opacity: 1;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        box-shadow: 10px 10px 8px $color-btnshadow;
+        opacity:.85;
+    }
+
+    &--menu {
+        width: 200px;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
     }
 }
-

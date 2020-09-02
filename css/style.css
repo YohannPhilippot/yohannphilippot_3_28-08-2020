@@ -46,8 +46,14 @@ body img {
   background-image: linear-gradient(#FF79da, #9356DC);
   color: #fff;
   margin-bottom: 1.5rem;
-  box-shadow: 10px 10px 10px #eaeaea;
+  box-shadow: 5px 5px 8px #c6bdcd;
   font-family: robotoblack, Arial, serif;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+.btn:hover {
+  box-shadow: 10px 10px 8px #c6bdcd;
+  opacity: 0.85;
 }
 .btn--menu {
   width: 200px;
@@ -226,6 +232,9 @@ a {
   margin-top: 1.5rem;
   margin-bottom: 0;
 }
+.restaurants__fav i {
+  color: red;
+}
 .restaurants img {
   border-radius: 1.5rem 1.5rem 0 0;
 }
@@ -290,10 +299,14 @@ a {
   margin-right: 1rem;
   margin-left: 1rem;
   padding-top: 1rem;
+  animation: entree 1500ms 200ms ease-out both;
+  z-index: -1;
 }
 .menu .entree h3 {
   font-family: robotolight, Arial, serif;
   font-size: 1rem;
+  overflow: wrap;
+  z-index: -3;
 }
 .menu .entree h3 span {
   border-bottom: 3px solid #99e2d0;
@@ -303,14 +316,26 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 75px;
+  width: 100%;
   padding-left: 0.5rem;
   background: #fff;
   border-radius: 1.5rem;
-  position: relative;
+  overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 10px 10px 10px #eaeaea;
+  z-index: 2;
+}
+.menu .entree__choice:hover .checked {
+  animation: checked 1000ms ease-in-out forwards alternate 2;
+}
+.menu .entree__choice:hover .entree__choice__price {
+  animation: price 1000ms ease-in-out alternate 2 forwards;
+}
+.menu .entree__choice:hover i {
+  animation: iconspin 1000ms ease-in-out forwards;
 }
 .menu .entree__choice__name {
+  z-index: -1;
   font-family: robotoblack, Arial, serif;
   margin-top: 1rem;
   line-height: 100%;
@@ -324,20 +349,79 @@ a {
 }
 .menu .entree__choice__price {
   margin-right: 1rem;
-  position: absolute;
+  display: flex;
+  align-items: flex-end;
   bottom: 1.5rem;
   right: 0;
   font-family: robotoblack, Arial, serif;
+  z-index: 10;
+}
+.menu .entree__choice .checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -110px;
+  margin-left: 40px;
+  height: 75px;
+  width: 75px;
+  background: #99e2d0;
+  border-radius: 0 1.5rem 1.5rem 0;
+  top: 4.4rem;
+  opacity: 1;
+  transform: scaleX(0);
+  animation-duration: 1000ms;
+}
+.menu .entree__choice .checked i {
+  font-size: 1.5rem;
+  color: #fff;
 }
 
+@keyframes iconspin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes price {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-94px);
+  }
+}
+@keyframes checked {
+  0% {
+    transform: translateX(-150px), scaleX(0);
+  }
+  1% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes entree {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .dish {
   margin-right: 1rem;
   margin-left: 1rem;
   padding-top: 1rem;
+  animation: dish 1500ms 400ms ease-in-out both;
 }
 .dish h3 {
   font-family: robotolight, Arial, serif;
   font-size: 1rem;
+  overflow: wrap;
+  z-index: -3;
 }
 .dish h3 span {
   border-bottom: 3px solid #99e2d0;
@@ -347,14 +431,25 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 75px;
+  width: 100%;
   padding-left: 0.5rem;
   background: #fff;
   border-radius: 1.5rem;
-  position: relative;
+  overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 10px 10px 10px #eaeaea;
 }
+.dish__choice:hover .checked {
+  animation: checked 1000ms ease-in-out forwards alternate 2;
+}
+.dish__choice:hover .dish__choice__price {
+  animation: price 1000ms ease-in-out alternate 2 forwards;
+}
+.dish__choice:hover i {
+  animation: iconspin 1000ms ease-in-out forwards;
+}
 .dish__choice__name {
+  z-index: -1;
   font-family: robotoblack, Arial, serif;
   margin-top: 1rem;
   line-height: 100%;
@@ -368,20 +463,52 @@ a {
 }
 .dish__choice__price {
   margin-right: 1rem;
-  position: absolute;
+  display: flex;
+  align-items: flex-end;
   bottom: 1.5rem;
   right: 0;
   font-family: robotoblack, Arial, serif;
+  z-index: 10;
+}
+.dish__choice .checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -110px;
+  margin-left: 40px;
+  height: 75px;
+  width: 75px;
+  background: #99e2d0;
+  border-radius: 0 1.5rem 1.5rem 0;
+  top: 4.4rem;
+  opacity: 1;
+  transform: scaleX(0);
+  animation-duration: 1000ms;
+}
+.dish__choice .checked i {
+  font-size: 1.5rem;
+  color: #fff;
 }
 
+@keyframes dish {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .dessert {
   margin-right: 1rem;
   margin-left: 1rem;
   padding-top: 1rem;
+  animation: dessert 1500ms 600ms ease-in-out both;
 }
 .dessert h3 {
   font-family: robotolight, Arial, serif;
   font-size: 1rem;
+  overflow: wrap;
+  z-index: -3;
 }
 .dessert h3 span {
   border-bottom: 3px solid #99e2d0;
@@ -391,14 +518,25 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 75px;
+  width: 100%;
   padding-left: 0.5rem;
   background: #fff;
   border-radius: 1.5rem;
-  position: relative;
+  overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 10px 10px 10px #eaeaea;
 }
+.dessert__choice:hover .checked {
+  animation: checked 1000ms ease-in-out forwards alternate 2;
+}
+.dessert__choice:hover .dessert__choice__price {
+  animation: price 1000ms ease-in-out alternate 2 forwards;
+}
+.dessert__choice:hover i {
+  animation: iconspin 1000ms ease-in-out forwards;
+}
 .dessert__choice__name {
+  z-index: -1;
   font-family: robotoblack, Arial, serif;
   margin-top: 1rem;
   line-height: 100%;
@@ -412,16 +550,121 @@ a {
 }
 .dessert__choice__price {
   margin-right: 1rem;
-  position: absolute;
+  display: flex;
+  align-items: flex-end;
   bottom: 1.5rem;
   right: 0;
   font-family: robotoblack, Arial, serif;
+  z-index: 10;
+}
+.dessert__choice .checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -110px;
+  margin-left: 40px;
+  height: 75px;
+  width: 75px;
+  background: #99e2d0;
+  border-radius: 0 1.5rem 1.5rem 0;
+  top: 4.4rem;
+  opacity: 1;
+  transform: scaleX(0);
+  animation-duration: 1000ms;
+}
+.dessert__choice .checked i {
+  font-size: 1.5rem;
+  color: #fff;
 }
 
+@keyframes dessert {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .order {
   text-align: center;
 }
 
+#loader .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#loader .barre {
+  display: inline-block;
+  width: 20px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 10%;
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-direction: cubic-bezier(0.7, 0.4, 0.2, 1.3);
+  transform-origin: bottom center;
+  position: relative;
+}
+#loader .barre--1 {
+  animation-delay: 0.1s;
+}
+#loader .barre--2 {
+  animation-delay: 0.25s;
+}
+#loader .barre--3 {
+  animation-delay: 0.4s;
+}
+#loader .barre--4 {
+  animation-delay: 0.55s;
+}
+#loader .barre--5 {
+  animation-delay: 0.7s;
+}
+#loader .barre--6 {
+  animation-delay: 0.85s;
+}
+#loader .barre--7 {
+  animation-delay: 1s;
+}
+@keyframes loading {
+  0% {
+    transform: translateY(-50px);
+    background-color: #9356DC;
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50px);
+    background-color: #FF79da;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    background-color: #99e2d0;
+    opacity: 0;
+  }
+}
+
+#page {
+  opacity: 0;
+  animation-name: body;
+  animation-duration: 2.5s;
+  animation-delay: 2.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .footer {
   position: relative;
   background: #353535;
