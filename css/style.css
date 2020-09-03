@@ -231,9 +231,26 @@ a {
   margin-right: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 0;
+  position: relative;
 }
-.restaurants__fav i {
-  color: red;
+.restaurants__fav .voidheart {
+  position: absolute;
+  font-size: 1.5rem;
+  right: 10px;
+}
+.restaurants__fav .filledheart {
+  position: absolute;
+  font-size: 1.5rem;
+  right: 10px;
+  opacity: 0;
+  z-index: 2;
+}
+.restaurants__fav:hover .voidheart {
+  animation: disappear 500ms both;
+  transform-origin: left;
+}
+.restaurants__fav:hover .filledheart {
+  animation: progressiveheart 1000ms forwards;
 }
 .restaurants img {
   border-radius: 1.5rem 1.5rem 0 0;
@@ -257,6 +274,41 @@ a {
   font-family: robotobold, Arial, serif;
 }
 
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes progressiveheart {
+  0% {
+    color: red;
+    transform: scaleZ(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scaleZ(0.23);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scaleZ(0.47);
+    opacity: 0.45;
+  }
+  75% {
+    transform: scaleZ(0.77);
+    opacity: 0.65;
+  }
+  100% {
+    color: red;
+    transform: scaleZ(1);
+    opacity: 1;
+  }
+}
 /*style menu*/
 .main__menu {
   margin-top: 1rem;
@@ -603,7 +655,7 @@ a {
   border-radius: 10%;
   animation-name: loading;
   animation-duration: 2s;
-  animation-direction: cubic-bezier(0.7, 0.4, 0.2, 1.3);
+  animation-direction: cubic-bezier(1, 0.4, 0.2, 1.3);
   transform-origin: bottom center;
   position: relative;
 }
@@ -625,14 +677,11 @@ a {
 #loader .barre--6 {
   animation-delay: 0.85s;
 }
-#loader .barre--7 {
-  animation-delay: 1s;
-}
 @keyframes loading {
   0% {
     transform: translateY(-50px);
     background-color: #9356DC;
-    opacity: 1;
+    opacity: 0.5;
   }
   50% {
     transform: translateY(50px);
