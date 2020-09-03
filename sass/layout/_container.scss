@@ -145,18 +145,15 @@ a{
         }
 
         &:hover {
-            .voidheart{animation: disappear 500ms both;
-            transform-origin: left;
+            .voidheart{
+                animation: disappear 500ms both;           
             }
             .filledheart {
                 animation:progressiveheart 1000ms forwards;
+                transform-origin:bottom;
             }
         }
     }
-
-
-
-
 
     img {
         border-radius: 1.5rem 1.5rem 0 0;
@@ -192,9 +189,10 @@ a{
 }
 @keyframes progressiveheart {
     0% {
-        color:red;
-        transform:scaleZ(0);
-        opacity:0;
+        
+        transform: scaleZ(0);
+        opacity: 0;
+        transform-origin: bottom;
     }
 
     25% {
@@ -204,7 +202,7 @@ a{
 
     50% {
         transform: scaleZ(.47);
-        opacity:.45;
+        opacity:.2;
         
     }
 
@@ -249,13 +247,14 @@ a{
         @include margin_menu;
 
         .restaurants__fav {
-            margin-top: 0;
-            margin-right: 2rem;
+            margin-top: 1.1rem;          
             font-size: 2.5rem;
+            margin-right:0;
         }
 
         h2 {
             font-family: shrikhandregular, Arial, serif;
+            font-size:1.5rem;
             margin-bottom: 0;
         }
     }
@@ -280,11 +279,11 @@ a{
 
             &:hover {
                 .checked {
-                    animation: checked 1000ms ease-in-out forwards alternate 2;
+                    animation: checked 1000ms ease-in-out forwards ;
                 }
 
                 .entree__choice__price {
-                    animation: price 1000ms ease-in-out alternate 2 forwards;
+                    animation: price 1000ms ease-in-out forwards;
                 }
 
                 i {
@@ -379,11 +378,11 @@ a{
 
         &:hover {
             .checked {
-                animation: checked 1000ms ease-in-out forwards alternate 2;
+                animation: checked 1000ms ease-in-out forwards;
             }
 
             .dish__choice__price {
-                animation: price 1000ms ease-in-out alternate 2 forwards;
+                animation: price 1000ms ease-in-out forwards;
             }
 
             i {
@@ -445,11 +444,11 @@ a{
 
         &:hover {
             .checked {
-                animation: checked 1000ms ease-in-out forwards alternate 2;
+                animation: checked 1000ms ease-in-out forwards;
             }
 
             .dessert__choice__price {
-                animation: price 1000ms ease-in-out alternate 2 forwards;
+                animation: price 1000ms ease-in-out forwards;
             }
 
             i {
