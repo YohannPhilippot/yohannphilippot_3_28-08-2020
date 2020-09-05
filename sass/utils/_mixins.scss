@@ -48,34 +48,35 @@
     box-shadow: 10px 10px 10px $color-geoloc;
 }
 
-@mixin menu_name {  
-    font-family: robotoblack, Arial, serif; 
-    
-    margin-top:-1.5rem;
+@mixin menu_name {
+    display:block;
+    font-family: robotoblack, Arial, serif;
+    margin-top: 1rem;
     margin-bottom: .3rem;
-   
+    
 }
 
 @mixin menu_description {
+    display:block;
     font-family: robotolight, Arial, serif;
     font-size: .9rem;
     margin-bottom: 1rem;
-    line-height: .9rem;
-    width: auto;
-    position:absolute;
+    margin-right:0;
+    line-height: .9rem;  
     
+    
+   
 }
 
 @mixin menu_price {
-    
+    float: right;
     margin-right: 1rem;
-    display:flex;
-    align-items:flex-end;
-    bottom: 1.5rem;
-    right: 0;
+    display: flex;
+    align-items: flex-end;
+    bottom: 1.5rem;   
     font-family: robotoblack, Arial, serif;
-    z-index:3;
-    
+    z-index: 3;  
+    padding-left:.5rem;
 }
 
 @mixin checked {

@@ -15,14 +15,12 @@ header{
     align-items:center;
     h1{
         position:absolute;
+        width:100%;
         z-index:1;
         text-align:center;
         padding-top:1rem;
-        img{
-            position:relative;
-            
-            max-width:50%;
-        }
+        font-size:1.5rem;
+        
     }
    
     a{
@@ -36,5 +34,54 @@ header{
         margin-left:$margin-mostelem;
         
         
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+    /*style responsive tablette index*/
+    header{
+        h1{
+            font-size: 2rem;
+        }
+    }
+
+    /*style responsive tablette pages menu*/
+    .header__menu{
+        h1{
+            font-size:2rem;
+            padding-top:.5rem;
+        }
+    }
+}
+
+@media screen and (min-width:992px){
+    /*style responsive laptop index*/
+    header{
+        padding-top:.5rem;
+        padding-bottom:.5rem;
+
+        h1{
+            font-size:3rem;
+            margin-top:1rem;
+           
+        }
+
+        i{
+            font-size:2rem;
+        }
+    }
+
+    /*style responsive laptop pages menu*/
+    .header__menu{
+        box-shadow:20px 0 20px $color-geoloc;
+        padding-bottom:1.5rem;
+        h1{
+            font-size:3rem;
+        }
+
+        i{
+            font-size:2rem;
+            margin-left:4rem;
+        }
     }
 }

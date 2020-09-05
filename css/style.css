@@ -61,6 +61,20 @@ body img {
   margin-bottom: 4rem;
 }
 
+@media screen and (min-width: 992px) {
+  /*responsive laptop bouton*/
+  .btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 350px;
+    height: 75px;
+  }
+  .btn p {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+}
 /*style index.html*/
 header {
   text-align: center;
@@ -78,13 +92,11 @@ header h1 {
 }
 .header__menu h1 {
   position: absolute;
+  width: 100%;
   z-index: 1;
   text-align: center;
   padding-top: 1rem;
-}
-.header__menu h1 img {
-  position: relative;
-  max-width: 50%;
+  font-size: 1.5rem;
 }
 .header__menu a {
   position: relative;
@@ -96,6 +108,45 @@ header h1 {
   margin-left: 1.5rem;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /*style responsive tablette index*/
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /*style responsive tablette pages menu*/
+  .header__menu h1 {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  /*style responsive laptop index*/
+  header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+  header i {
+    font-size: 2rem;
+  }
+
+  /*style responsive laptop pages menu*/
+  .header__menu {
+    box-shadow: 20px 0 20px #eaeaea;
+    padding-bottom: 1.5rem;
+  }
+  .header__menu h1 {
+    font-size: 3rem;
+  }
+  .header__menu i {
+    font-size: 2rem;
+    margin-left: 4rem;
+  }
+}
 .localisation {
   display: flex;
   margin-top: 0;
@@ -130,7 +181,7 @@ header h1 {
   font-family: robotolight, Arial, serif;
   font-size: 1.5rem;
   font-family: robotobold, Arial, serif;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .instructions__element {
@@ -197,10 +248,14 @@ a {
   padding-left: 0.5rem;
   padding-bottom: 1.5rem;
 }
+.restaurants img {
+  margin-bottom: 0;
+}
 .restaurants__choice {
   margin: 0;
   padding: 0;
-  border-radius: 50%;
+  border-radius: 1.5rem;
+  overflow: hidden;
   margin-bottom: 1.5rem;
 }
 .restaurants__description {
@@ -209,6 +264,7 @@ a {
   border-radius: 0 0 1.5rem 1.5rem;
   justify-content: space-between;
   padding-bottom: 1rem;
+  margin-top: 0;
 }
 .restaurants__name {
   margin-left: 1.5rem;
@@ -249,20 +305,8 @@ a {
   animation: disappear 500ms both;
 }
 .restaurants__fav:hover .filledheart {
-  animation: progressiveheart 1000ms forwards;
+  animation: progressiveheart 750ms forwards;
   transform-origin: bottom;
-}
-.restaurants img {
-  border-radius: 1.5rem 1.5rem 0 0;
-}
-.restaurants .picture_cut {
-  border-radius: 1.5rem 1.5rem 0 0;
-  overflow: hidden;
-  height: 250px;
-  margin: 0;
-}
-.restaurants .picture_cut img {
-  margin-top: -120px;
 }
 .restaurants h2 {
   margin-top: 0;
@@ -304,7 +348,7 @@ a {
     opacity: 0.65;
   }
   100% {
-    color: red;
+    color: #9356DC;
     transform: scaleZ(1);
     opacity: 1;
   }
@@ -339,21 +383,20 @@ a {
   padding-top: 1rem;
 }
 .menu__title .restaurants__fav {
-  margin-top: 1.1rem;
+  margin-top: 0.8rem;
   font-size: 2.5rem;
   margin-right: 0;
 }
 .menu__title h2 {
   font-family: shrikhandregular, Arial, serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0;
 }
 .menu .entree {
   margin-right: 1rem;
   margin-left: 1rem;
   padding-top: 1rem;
-  animation: entree 1500ms 200ms ease-out both;
-  z-index: -1;
+  animation: entree 2000ms 300ms ease-out both;
 }
 .menu .entree h3 {
   font-family: robotolight, Arial, serif;
@@ -376,38 +419,55 @@ a {
   overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 10px 10px 10px #eaeaea;
-  z-index: 2;
 }
 .menu .entree__choice:hover .checked {
-  animation: checked 1000ms ease-in-out forwards;
+  animation: checked 1000ms ease-in-out both;
 }
 .menu .entree__choice:hover .entree__choice__price {
-  animation: price 1000ms ease-in-out forwards;
+  animation: price 1000ms ease-in-out both;
 }
 .menu .entree__choice:hover i {
   animation: iconspin 1000ms ease-in-out forwards;
 }
+.menu .entree__choice:hover .entree__choice__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .entree__choice:hover .entree__choice__description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .entree__choice:hover .entree__choice__fullname {
+  animation: wrap 1000ms ease-in-out both;
+}
+.menu .entree__choice__fullname {
+  width: 80%;
+}
 .menu .entree__choice__name {
+  display: block;
   font-family: robotoblack, Arial, serif;
-  margin-top: -1.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.3rem;
 }
 .menu .entree__choice__description {
+  display: block;
   font-family: robotolight, Arial, serif;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+  margin-right: 0;
   line-height: 0.9rem;
-  width: auto;
-  position: absolute;
 }
 .menu .entree__choice__price {
+  float: right;
   margin-right: 1rem;
   display: flex;
   align-items: flex-end;
   bottom: 1.5rem;
-  right: 0;
   font-family: robotoblack, Arial, serif;
   z-index: 3;
+  padding-left: 0.5rem;
 }
 .menu .entree__choice .checked {
   display: flex;
@@ -429,6 +489,24 @@ a {
   color: #fff;
 }
 
+@keyframes wrap {
+  0% {
+    width: 80%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 375px) {
+  @keyframes wrap {
+    0% {
+      width: 80%;
+    }
+    100% {
+      width: 55%;
+    }
+  }
+}
 @keyframes iconspin {
   from {
     transform: rotateZ(0deg);
@@ -458,17 +536,19 @@ a {
 }
 @keyframes entree {
   0% {
-    transform: translateX(-1000px);
+    transform: translateY(-50px);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 .dish {
   margin-right: 1rem;
   margin-left: 1rem;
   padding-top: 1rem;
-  animation: dish 1500ms 400ms ease-in-out both;
+  animation: dish 2000ms 600ms ease-out both;
 }
 .dish h3 {
   font-family: robotolight, Arial, serif;
@@ -501,27 +581,42 @@ a {
 .dish__choice:hover i {
   animation: iconspin 1000ms ease-in-out forwards;
 }
+.dish__choice:hover .dish__choice__fullname {
+  animation: wrap 1000ms ease-in-out both;
+}
+.dish__choice:hover .dish__choice__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dish__choice:hover .dish__choice__description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .dish__choice__name {
+  display: block;
   font-family: robotoblack, Arial, serif;
-  margin-top: -1.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.3rem;
 }
 .dish__choice__description {
+  display: block;
   font-family: robotolight, Arial, serif;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+  margin-right: 0;
   line-height: 0.9rem;
-  width: auto;
-  position: absolute;
 }
 .dish__choice__price {
+  float: right;
   margin-right: 1rem;
   display: flex;
   align-items: flex-end;
   bottom: 1.5rem;
-  right: 0;
   font-family: robotoblack, Arial, serif;
   z-index: 3;
+  padding-left: 0.5rem;
 }
 .dish__choice .checked {
   display: flex;
@@ -545,17 +640,19 @@ a {
 
 @keyframes dish {
   0% {
-    transform: translateX(-1000px);
+    transform: translateY(-50px);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 .dessert {
   margin-right: 1rem;
   margin-left: 1rem;
   padding-top: 1rem;
-  animation: dessert 1500ms 600ms ease-in-out both;
+  animation: dessert 2000ms 900ms ease-out both;
 }
 .dessert h3 {
   font-family: robotolight, Arial, serif;
@@ -588,27 +685,42 @@ a {
 .dessert__choice:hover i {
   animation: iconspin 1000ms ease-in-out forwards;
 }
+.dessert__choice:hover .dessert__choice__fullname {
+  animation: wrap 1000ms ease-in-out both;
+}
+.dessert__choice:hover .dessert__choice__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dessert__choice:hover .dessert__choice__description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .dessert__choice__name {
+  display: block;
   font-family: robotoblack, Arial, serif;
-  margin-top: -1.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.3rem;
 }
 .dessert__choice__description {
+  display: block;
   font-family: robotolight, Arial, serif;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+  margin-right: 0;
   line-height: 0.9rem;
-  width: auto;
-  position: absolute;
 }
 .dessert__choice__price {
+  float: right;
   margin-right: 1rem;
   display: flex;
   align-items: flex-end;
   bottom: 1.5rem;
-  right: 0;
   font-family: robotoblack, Arial, serif;
   z-index: 3;
+  padding-left: 0.5rem;
 }
 .dessert__choice .checked {
   display: flex;
@@ -632,10 +744,12 @@ a {
 
 @keyframes dessert {
   0% {
-    transform: translateX(-1000px);
+    transform: translateY(-50px);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 .order {
@@ -715,6 +829,177 @@ a {
     opacity: 1;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /*style responsive tablette de index.html*/
+  .instructions {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  .instructions h2 {
+    text-align: center;
+  }
+
+  .first_two, .last_two {
+    display: flex;
+  }
+  .first_two .restaurants__choice--1, .last_two .restaurants__choice--1 {
+    margin-right: 0.5rem;
+  }
+  .first_two .restaurants__choice--2, .last_two .restaurants__choice--2 {
+    margin-left: 0.5rem;
+  }
+  .first_two .restaurants__choice--3, .last_two .restaurants__choice--3 {
+    margin-right: 0.5rem;
+  }
+  .first_two .restaurants__choice--4, .last_two .restaurants__choice--4 {
+    margin-left: 0.5rem;
+  }
+
+  /*style responsive tablette des pages de menu*/
+  .menu__title {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .entree {
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+  }
+  .entree h3 {
+    font-size: 1.3rem !important;
+    text-align: center;
+  }
+
+  .dish {
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+  }
+  .dish h3 {
+    font-size: 1.3rem !important;
+    text-align: center;
+  }
+
+  .dessert {
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+  }
+  .dessert h3 {
+    font-size: 1.3rem !important;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  /*style responsive laptop index.html*/
+  .localisation {
+    padding: 0;
+  }
+  .localisation p {
+    font-size: 1rem;
+  }
+  .localisation i {
+    font-size: 1rem !important;
+  }
+
+  .presentation {
+    display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .presentation__text {
+    text-align: left;
+  }
+
+  .instructions {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  .instructions h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .restaurants h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .first_two, .last_two {
+    display: flex;
+    margin: 0 20% 0 20%;
+  }
+  .first_two .restaurants__choice--1, .last_two .restaurants__choice--1 {
+    margin-right: 1rem;
+  }
+  .first_two .restaurants__choice--2, .last_two .restaurants__choice--2 {
+    margin-left: 1rem;
+  }
+  .first_two .restaurants__choice--3, .last_two .restaurants__choice--3 {
+    margin-right: 1rem;
+  }
+  .first_two .restaurants__choice--4, .last_two .restaurants__choice--4 {
+    margin-left: 1rem;
+  }
+
+  /*responsive laptop pages menu*/
+  .main__menu img {
+    max-width: 40%;
+    margin-left: 30%;
+    margin-bottom: 4rem;
+    box-shadow: 10px 10px 8px #000;
+    border-radius: 1.5rem;
+  }
+  .main__menu .menu__title {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .main__menu .menu__title h2 {
+    font-size: 2.5rem;
+  }
+  .main__menu .menu__title i {
+    font-size: 3rem;
+  }
+  .main__menu .menu .entree {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .main__menu .menu .entree h3 {
+    font-size: 1.3rem;
+  }
+  .main__menu .menu .entree__choice__name {
+    margin-left: 1rem;
+  }
+  .main__menu .menu .entree__choice__description {
+    margin-left: 1rem;
+  }
+  .main__menu .menu .dish {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .main__menu .menu .dish h3 {
+    font-size: 1.3rem;
+  }
+  .main__menu .menu .dish__choice__name {
+    margin-left: 1rem;
+  }
+  .main__menu .menu .dish__choice__description {
+    margin-left: 1rem;
+  }
+  .main__menu .menu .dessert {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .main__menu .menu .dessert h3 {
+    font-size: 1.3rem;
+  }
+  .main__menu .menu .dessert__choice__name {
+    margin-left: 1rem;
+  }
+  .main__menu .menu .dessert__choice__description {
+    margin-left: 1rem;
+  }
+}
 .footer {
   position: relative;
   background: #353535;
@@ -751,6 +1036,24 @@ a {
 .footer__item__legal a {
   text-decoration: none;
   color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  /*style responsive laptop index*/
+  .footer h2 {
+    text-align: center;
+    margin-left: 0;
+    font-size: 2rem;
+  }
+  .footer__content {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+  .footer__content .footer__item {
+    font-size: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

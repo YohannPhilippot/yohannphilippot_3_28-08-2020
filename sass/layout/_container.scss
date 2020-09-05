@@ -27,7 +27,7 @@
         @include section_title;
         font-size:$title-size;
         font-family:robotobold,Arial,serif;
-        margin-bottom: $margin-mostelem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -88,10 +88,15 @@ a{
     padding-left: .5rem;
     padding-bottom: $margin-mostelem;
 
+    img{
+        margin-bottom:0;
+    }
+
     &__choice {
         margin: 0;
         padding: 0;
-        border-radius: 50%;
+        border-radius: 1.5rem;
+        overflow:hidden;
         margin-bottom: $margin-mostelem;
     }
 
@@ -102,6 +107,7 @@ a{
         border-radius: 0 0 1.5rem 1.5rem;
         justify-content: space-between;
         padding-bottom: 1rem;
+        margin-top:0;
     }
 
     &__name {
@@ -149,26 +155,14 @@ a{
                 animation: disappear 500ms both;           
             }
             .filledheart {
-                animation:progressiveheart 1000ms forwards;
+                animation:progressiveheart 750ms forwards;
                 transform-origin:bottom;
             }
         }
     }
 
-    img {
-        border-radius: 1.5rem 1.5rem 0 0;
-    }
+   
 
-    .picture_cut {
-        border-radius: 1.5rem 1.5rem 0 0;
-        overflow: hidden;
-        height: 250px;
-        margin: 0;
-
-        img {
-            margin-top: -120px;
-        }
-    }
 
     h2 {
         @include section_title;
@@ -212,7 +206,7 @@ a{
     }
 
     100% {
-        color:red;
+        color:$color-primary;
         transform: scaleZ(1);
         opacity: 1;
     }
@@ -243,26 +237,27 @@ a{
     &__title {
         display: flex;
         justify-content: space-between;
+        
         margin-top: $margin-mostelem;
         @include margin_menu;
 
         .restaurants__fav {
-            margin-top: 1.1rem;          
+            margin-top: .8rem;
             font-size: 2.5rem;
-            margin-right:0;
+            margin-right: 0;
         }
 
         h2 {
             font-family: shrikhandregular, Arial, serif;
-            font-size:1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 0;
         }
     }
 
     .entree {
         @include margin_menu;
-        animation: entree 1500ms 200ms ease-out both;
-        z-index: -1;
+        animation: entree 2000ms 300ms ease-out both;
+       
 
         h3 {
             @include menu_title;
@@ -274,26 +269,41 @@ a{
 
         &__choice {
             @include menu_choice;
-            z-index: 2;
 
 
             &:hover {
                 .checked {
-                    animation: checked 1000ms ease-in-out forwards ;
+                    animation: checked 1000ms ease-in-out both;
                 }
 
                 .entree__choice__price {
-                    animation: price 1000ms ease-in-out forwards;
+                    animation: price 1000ms ease-in-out both;
                 }
 
                 i {
                     animation: iconspin 1000ms ease-in-out forwards;
                 }
 
-              
+                .entree__choice__name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .entree__choice__description {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .entree__choice__fullname {
+                    animation: wrap 1000ms ease-in-out both;
+                }
             }
 
-
+            &__fullname {
+                width: 80%;
+            }
 
             &__name {
                 @include menu_name;
@@ -318,6 +328,30 @@ a{
         }
     }
 }
+
+@keyframes wrap{
+    0%{
+        width:80%;
+    }
+
+    100%{
+        width:50%;
+    }
+ 
+}
+
+@media screen and (min-width:375px){
+    @keyframes wrap{     
+        0%{
+                width:80%;
+            }
+        
+        100%{
+                width:55%;
+            }
+    }
+}
+
 @keyframes iconspin{
     from{
         transform:rotateZ(0deg);
@@ -353,17 +387,19 @@ a{
 
 @keyframes entree {
     0% {
-        transform: translateX(-1000px);
+        transform: translateY(-50px);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
 .dish {
     @include margin_menu;
-    animation: dish 1500ms 400ms ease-in-out both;
+    animation: dish 2000ms 600ms ease-out both;
 
     h3 {
         @include menu_title;
@@ -388,18 +424,30 @@ a{
             i {
                 animation: iconspin 1000ms ease-in-out forwards;
             }
-            
-            
+
+            .dish__choice__fullname {
+                animation: wrap 1000ms ease-in-out both;
+            }
+
+            .dish__choice__name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .dish__choice__description {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
         &__name {
             @include menu_name;
-            
         }
 
         &__description {
             @include menu_description;
-            
         }
 
         &__price {
@@ -419,17 +467,20 @@ a{
 
 @keyframes dish {
     0% {
-        transform: translateX(-1000px);
+        transform:translateY(-50px);
+        opacity:0;
     }
 
     100% {
-        transform: translateX(0);
+        transform:translateY(0);
+        opacity:1;
     }
 }
 
 .dessert {
     @include margin_menu;
-    animation: dessert 1500ms 600ms ease-in-out both;
+    animation: dessert 2000ms 900ms ease-out both;
+
 
     h3 {
         @include menu_title;
@@ -441,7 +492,7 @@ a{
 
     &__choice {
         @include menu_choice;
-
+        
         &:hover {
             .checked {
                 animation: checked 1000ms ease-in-out forwards;
@@ -453,6 +504,22 @@ a{
 
             i {
                 animation: iconspin 1000ms ease-in-out forwards;
+            }
+
+            .dessert__choice__fullname {
+                animation: wrap 1000ms ease-in-out both;
+            }
+
+            .dessert__choice__name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .dessert__choice__description {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -481,11 +548,13 @@ a{
 
 @keyframes dessert {
     0% {
-        transform: translateX(-1000px);
+        transform: translateY(-50px);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -579,4 +648,225 @@ a{
     to {
         opacity: 1;
     }
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+/*style responsive tablette de index.html*/
+    .instructions{
+        margin-right:10%;
+        margin-left:10%;
+        h2{
+            text-align:center;
+        }
+    }
+
+    .first_two, .last_two{
+        display:flex;
+        .restaurants__choice{
+            &--1{
+                margin-right:.5rem;
+            }
+            &--2{
+                margin-left:.5rem;
+            }
+            &--3{
+                margin-right:.5rem;
+            }
+            &--4{
+                margin-left:.5rem;
+            }
+        }
+    }
+/*style responsive tablette des pages de menu*/
+    .menu{
+        &__title{
+            margin-left:5%;
+            margin-right:5%;
+        }
+    }
+
+    .entree{
+        margin-right:10%!important;
+        margin-left:10%!important;
+        h3{
+            font-size:1.3rem!important;
+            text-align:center;
+        }
+    }
+
+    .dish {
+        margin-right: 10% !important;
+        margin-left: 10% !important;
+
+        h3 {
+            font-size: 1.3rem !important;
+            text-align: center;
+        }
+    }
+
+    .dessert {
+        margin-right: 10% !important;
+        margin-left: 10% !important;
+
+        h3 {
+            font-size: 1.3rem !important;
+            text-align: center;
+        }
+    }
+
+
+}
+
+@media screen and (min-width:992px){
+/*style responsive laptop index.html*/
+    .localisation{
+       padding:0;
+        p{
+        font-size:1rem;
+        }
+
+        i{
+            font-size:1rem!important;
+        }
+    }
+    
+    .presentation{
+        display:flex;
+        padding-left:15%;
+        padding-right:15%;
+        justify-content:space-around;
+        align-items:center;
+        &__text{
+            text-align:left;
+           
+           
+        }
+    }
+
+    .instructions {
+        margin-right: 10%;
+        margin-left: 10%;
+
+        h2 {
+            text-align: center;
+            font-size:2rem;
+        }
+    }
+
+    .restaurants
+        h2{
+        text-align:center;
+        font-size:2rem;
+    }
+
+    .first_two, .last_two {
+        display: flex;
+        
+        margin:0 20% 0 20%;
+        
+
+        .restaurants__choice {
+            &--1 {
+                margin-right: 1rem;
+            }
+
+            &--2 {
+                margin-left: 1rem;
+            }
+
+            &--3 {
+                margin-right: 1rem;
+            }
+
+            &--4 {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    /*responsive laptop pages menu*/
+    .main__menu {
+        img {
+            max-width: 40%;
+            margin-left: 30%;
+            margin-bottom: 4rem;
+            box-shadow: 10px 10px 8px #000;
+            border-radius: 1.5rem;
+        }
+
+        .menu {
+
+            &__title {
+                margin-left: 15%;
+                margin-right: 15%;
+
+                h2 {
+                    font-size: 2.5rem;
+                }
+
+                i {
+                    font-size: 3rem;
+                }
+            }
+
+            .entree {
+                margin-left: 20%;
+                margin-right: 20%;
+
+                h3 {
+                    font-size: 1.3rem;
+                }
+
+                &__choice {
+                    &__name {
+                        margin-left: 1rem;
+                    }
+
+                    &__description {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            .dish {
+                margin-left: 20%;
+                margin-right: 20%;
+
+                h3 {
+                    font-size: 1.3rem;
+                }
+
+                &__choice {
+                    &__name {
+                        margin-left: 1rem;
+                    }
+
+                    &__description {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            .dessert {
+                margin-left: 20%;
+                margin-right: 20%;
+
+                h3 {
+                    font-size: 1.3rem;
+                }
+
+                &__choice {
+                    &__name {
+                        margin-left: 1rem;
+                    }
+
+                    &__description {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }

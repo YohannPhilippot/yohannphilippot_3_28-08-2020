@@ -43,3 +43,23 @@
         }
     }
 }
+
+@media screen and (min-width:992px){
+    /*style responsive laptop index*/
+    .footer{
+
+        h2{
+            text-align:center;
+            margin-left:0;
+            font-size:2rem;
+        }
+        &__content{
+            display:flex;
+            justify-content:space-around;
+            margin-right:15%;
+            margin-left:15%;
+            .footer__item{font-size:1rem;
+                   }
+        }
+    }
+}
