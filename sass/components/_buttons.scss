@@ -1,6 +1,8 @@
 .btn {
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
     border-radius: 2rem;
     border: none;
     background-image: linear-gradient($color-secondary,$color-primary);
@@ -10,7 +12,7 @@
     font-family: robotoblack, Arial, serif;
     opacity: 1;
     transition: .3s ease-in-out;
-
+    
     &:hover {
         box-shadow: 10px 10px 8px $color-btnshadow;
         opacity:.85;
@@ -32,11 +34,7 @@
         margin-bottom:1rem;
         width: 350px;
         height:75px;
-        p{
-            margin-bottom:0;
-            margin-top:0;
-            font-size:1.5rem;
-        }
+        font-size:1rem;
     }
 
 }
