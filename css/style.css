@@ -255,6 +255,17 @@ a {
   border-radius: 1.5rem;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  position: relative;
+}
+.restaurants__choice .new {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: #99e2d0;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  font-family: robotoblack, Arial, serif;
+  color: #278870;
+  border-radius: 0.2rem;
 }
 .restaurants__description {
   display: flex;
@@ -418,10 +429,12 @@ a {
   box-shadow: 10px 10px 10px #eaeaea;
 }
 .menu .entree__choice:hover .checked {
-  animation: checked 1000ms ease-in-out both;
+  transform: scaleX(1);
+  transition: transform 1000ms;
 }
 .menu .entree__choice:hover .entree__choice__price {
-  animation: price 1000ms ease-in-out both;
+  transition: transform 1000ms;
+  transform: translateX(-94px);
 }
 .menu .entree__choice:hover i {
   animation: iconspin 1000ms ease-in-out forwards;
@@ -437,7 +450,7 @@ a {
   text-overflow: ellipsis;
 }
 .menu .entree__choice:hover .entree__choice__fullname {
-  animation: wrap 1000ms ease-in-out both;
+  animation: wrap 1000ms both;
 }
 .menu .entree__choice__fullname {
   width: 80%;
@@ -465,6 +478,8 @@ a {
   font-family: robotoblack, Arial, serif;
   z-index: 3;
   padding-left: 0.5rem;
+  transform: translateX(0);
+  transition: transform 1000ms;
 }
 .menu .entree__choice .checked {
   display: flex;
@@ -480,6 +495,9 @@ a {
   opacity: 1;
   transform: scaleX(0);
   animation-duration: 1000ms;
+  transform: translateX(-150px);
+  transform: scaleX(0);
+  transition: all 1000ms;
 }
 .menu .entree__choice .checked i {
   font-size: 1.5rem;
@@ -488,10 +506,13 @@ a {
 
 @keyframes wrap {
   0% {
-    width: 80%;
+    width: 85%;
+  }
+  50% {
+    width: 60%;
   }
   100% {
-    width: 50%;
+    width: 55%;
   }
 }
 @media screen and (min-width: 375px) {
@@ -510,25 +531,6 @@ a {
   }
   to {
     transform: rotateZ(360deg);
-  }
-}
-@keyframes price {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-94px);
-  }
-}
-@keyframes checked {
-  0% {
-    transform: translateX(-150px) scaleX(0);
-  }
-  1% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 @keyframes entree {
@@ -569,10 +571,12 @@ a {
   box-shadow: 10px 10px 10px #eaeaea;
 }
 .dish__choice:hover .checked {
-  animation: checked 1000ms ease-in-out forwards;
+  transform: scaleX(1);
+  transition: transform 1000ms;
 }
 .dish__choice:hover .dish__choice__price {
-  animation: price 1000ms ease-in-out forwards;
+  transition: transform 1000ms;
+  transform: translateX(-94px);
 }
 .dish__choice:hover i {
   animation: iconspin 1000ms ease-in-out forwards;
@@ -613,6 +617,8 @@ a {
   font-family: robotoblack, Arial, serif;
   z-index: 3;
   padding-left: 0.5rem;
+  transform: translateX(0);
+  transition: transform 1000ms;
 }
 .dish__choice .checked {
   display: flex;
@@ -628,6 +634,8 @@ a {
   opacity: 1;
   transform: scaleX(0);
   animation-duration: 1000ms;
+  transform: scaleX(0);
+  transition: all 1000ms;
 }
 .dish__choice .checked i {
   font-size: 1.5rem;
@@ -672,10 +680,12 @@ a {
   box-shadow: 10px 10px 10px #eaeaea;
 }
 .dessert__choice:hover .checked {
-  animation: checked 1000ms ease-in-out forwards;
+  transform: scaleX(1);
+  transition: transform 1000ms;
 }
 .dessert__choice:hover .dessert__choice__price {
-  animation: price 1000ms ease-in-out forwards;
+  transition: transform 1000ms;
+  transform: translateX(-94px);
 }
 .dessert__choice:hover i {
   animation: iconspin 1000ms ease-in-out forwards;
@@ -716,6 +726,8 @@ a {
   font-family: robotoblack, Arial, serif;
   z-index: 3;
   padding-left: 0.5rem;
+  transform: translateX(0);
+  transition: transform 1000ms;
 }
 .dessert__choice .checked {
   display: flex;
@@ -731,6 +743,9 @@ a {
   opacity: 1;
   transform: scaleX(0);
   animation-duration: 1000ms;
+  transform: translateX(-150px);
+  transform: scaleX(0);
+  transition: all 1000ms;
 }
 .dessert__choice .checked i {
   font-size: 1.5rem;
@@ -809,10 +824,7 @@ a {
 
 #page {
   opacity: 0;
-  animation-name: body;
-  animation-duration: 2.5s;
-  animation-delay: 2.6s;
-  animation-fill-mode: forwards;
+  animation: body 2500ms 2600ms forwards;
 }
 
 @keyframes body {

@@ -88,16 +88,28 @@ a{
     padding-left: .5rem;
     padding-bottom: $margin-mostelem;
 
-    img{
-        margin-bottom:0;
+    img {
+        margin-bottom: 0;
     }
 
     &__choice {
         margin: 0;
         padding: 0;
         border-radius: 1.5rem;
-        overflow:hidden;
+        overflow: hidden;
         margin-bottom: $margin-mostelem;
+        position: relative;
+
+        .new {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            background:$color-tertiary;
+            padding:.5rem 2rem .5rem 2rem;
+            font-family:robotoblack, Arial, serif;
+            color:darken($color-tertiary, 40%);
+            border-radius:.2rem;
+        }
     }
 
 
@@ -107,7 +119,7 @@ a{
         border-radius: 0 0 1.5rem 1.5rem;
         justify-content: space-between;
         padding-bottom: 1rem;
-        margin-top:0;
+        margin-top: 0;
     }
 
     &__name {
@@ -151,17 +163,18 @@ a{
         }
 
         &:hover {
-            .voidheart{
-                animation: disappear 500ms both;           
+            .voidheart {
+                animation: disappear 500ms both;
             }
+
             .filledheart {
-                animation:progressiveheart 750ms forwards;
-                transform-origin:bottom;
+                animation: progressiveheart 750ms forwards;
+                transform-origin: bottom;
             }
         }
     }
 
-   
+
 
 
     h2 {
@@ -237,7 +250,6 @@ a{
     &__title {
         display: flex;
         justify-content: space-between;
-        
         margin-top: $margin-mostelem;
         @include margin_menu;
 
@@ -257,7 +269,7 @@ a{
     .entree {
         @include margin_menu;
         animation: entree 2000ms 300ms ease-out both;
-       
+
 
         h3 {
             @include menu_title;
@@ -273,11 +285,13 @@ a{
 
             &:hover {
                 .checked {
-                    animation: checked 1000ms ease-in-out both;
+                    transform: scaleX(1);
+                    transition: transform 1000ms;
                 }
 
                 .entree__choice__price {
-                    animation: price 1000ms ease-in-out both;
+                    transition: transform 1000ms;
+                    transform: translateX(-94px);
                 }
 
                 i {
@@ -297,7 +311,7 @@ a{
                 }
 
                 .entree__choice__fullname {
-                    animation: wrap 1000ms ease-in-out both;
+                    animation: wrap 1000ms both;
                 }
             }
 
@@ -315,10 +329,15 @@ a{
 
             &__price {
                 @include menu_price;
+                transform: translateX(0);
+                transition: transform 1000ms;
             }
 
             .checked {
                 @include checked;
+                transform: translateX(-150px);
+                transform: scaleX(0);
+                transition: all 1000ms;
 
                 i {
                     font-size: 1.5rem;
@@ -329,13 +348,16 @@ a{
     }
 }
 
+
 @keyframes wrap{
     0%{
-        width:80%;
+        width:85%;
     }
-
+    50%{
+        width:60%;
+    }
     100%{
-        width:50%;
+        width:55%;
     }
  
 }
@@ -360,29 +382,6 @@ a{
         transform:rotateZ(360deg);
     }
 }
-@keyframes price{
-    0%{
-        transform:translateX(0);
-        
-    }
-    100%{
-        transform:translateX(-94px);
-    }
-}
-
-@keyframes checked{
-    0%{
-        transform:translateX(-150px) scaleX(0);      
-    }
-    1% {
-        transform: scaleX(1);
-    }
-    100% {
-        
-        transform: translateX(0);
-    }
-}
-
 
 
 @keyframes entree {
@@ -414,11 +413,13 @@ a{
 
         &:hover {
             .checked {
-                animation: checked 1000ms ease-in-out forwards;
+                transform: scaleX(1);
+                transition: transform 1000ms;
             }
 
             .dish__choice__price {
-                animation: price 1000ms ease-in-out forwards;
+                transition: transform 1000ms;
+                transform: translateX(-94px);
             }
 
             i {
@@ -452,10 +453,14 @@ a{
 
         &__price {
             @include menu_price;
+            transform: translateX(0);
+            transition: transform 1000ms;
         }
 
         .checked {
-            @include checked;
+            @include checked;        
+            transform: scaleX(0);
+            transition: all 1000ms;
 
             i {
                 font-size: 1.5rem;
@@ -492,14 +497,16 @@ a{
 
     &__choice {
         @include menu_choice;
-        
+
         &:hover {
             .checked {
-                animation: checked 1000ms ease-in-out forwards;
+                transform:scaleX(1);
+                transition: transform 1000ms;              
             }
 
             .dessert__choice__price {
-                animation: price 1000ms ease-in-out forwards;
+                transition: transform 1000ms;
+                transform: translateX(-94px);
             }
 
             i {
@@ -533,11 +540,15 @@ a{
 
         &__price {
             @include menu_price;
+            transform: translateX(0);
+            transition: transform 1000ms;
         }
 
         .checked {
             @include checked;
-
+            transform:translateX(-150px);
+            transform:scaleX(0);
+            transition:all 1000ms;
             i {
                 font-size: 1.5rem;
                 color: #fff;
@@ -632,10 +643,7 @@ a{
 }
 #page {
     opacity: 0;
-    animation-name: body;
-    animation-duration: 2.5s;
-    animation-delay: 2.6s;
-    animation-fill-mode: forwards;
+    animation: body 2500ms 2600ms forwards;
 }
 @keyframes body {
     from {
