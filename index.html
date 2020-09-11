@@ -4,192 +4,191 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="réservation en ligne de restaurants"/>
     <script src="https://kit.fontawesome.com/79170022be.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <title>ohmyfood</title>
+    <link rel="shortcut icon" type="image/png" href="./images/logo/favicon.png" />
+    <title>Ohmyfood</title>
 </head>
 <body>
-    <div id="loader">
-        <div class="wrapper">
-            <span class="barre barre--1"></span>
-            <span class="barre barre--2"></span>
-            <span class="barre barre--3"></span>
-            <span class="barre barre--4"></span>
-            <span class="barre barre--5"></span>
-            <span class="barre barre--6"></span>    
-        </div>
+    <!--loader a l'arrivee sur la page-->
+    <div id="loader">       
+            <div class="barre barre--1"></div>
+            <div class="barre barre--2"></div>
+            <div class="barre barre--3"></div>
+            <div class="barre barre--4"></div>
+            <div class="barre barre--5"></div>
+            <div class="barre barre--6"></div>            
     </div>
 
     <div id="page">
-    <header class="header__index">
-        <h1>
-            Ohmyfood
-        </h1>
-    </header>
-    <main>
-        <div class="localisation">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Paris, Belleville</p>
-        </div>
-        <section class="presentation">
-            
-            <div class="presentation__text">
-                <h2>Book the menu you like</h2>
-                <p>Discover top-of-the-art restaurants we picked for you</p>
+        <header class="header__index">
+            <h1>
+                Ohmyfood
+            </h1>
+        </header>
+        <main>
+            <!--localisation et presentation de l'entreprise-->
+            <section class="localisation">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Paris, Belleville</p>
+            </section>
+            <section class="presentation">
+                <div class="presentation__text">
+                    <h2>Book the menu you like</h2>
+                    <p>Discover top-of-the-art restaurants we picked for you</p>
+                </div>
+                <button class="btn">
+                    Explore our restaurants
+                </button>
+            </section>
+            <!--instructions sur comment utiliser le site-->
+            <section class="instructions">
+                <h2>How it works</h2>
+                <div class="instructions__element">
+                    <div class="instructions__element__text">
+                        <p>1</p>
+                    </div>
+                    <div class="instructions__element__icons">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="instructions__element__content">
+                        <p>Chose a restaurant</p>
+                    </div>
+                </div>
+                <div class="instructions__element">
+                    <div class="instructions__element__text">
+                        <p>2</p>
+                    </div>
+                    <div class="instructions__element__icons">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="instructions__element__content">
+                        <p>Create your menu</p>
+                    </div>
+                </div>
+                <div class="instructions__element instructions__element--darker">
+                    <div class="instructions__element__text">
+                        <p>3</p>
+                    </div>
+                    <div class="instructions__element__icons instructions__element__icons--pink">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="instructions__element__content">
+                        <p>Go enjoy it at the restaurant</p>
+                    </div>
+                </div>
+            </section>
+            <!--affichage des differents restaurants du site-->
+            <section class="restaurants">
+                <h2>Restaurants</h2>
+                <div class="first_two">
+                    <a href="fullpalette.html">
+                        <div class="restaurants__choice restaurants__choice--1">
+                            <img src="images/restaurants/FullPalette.jpg" alt="The Full Palette restaurant" />
+                            <div class="new">New</div>
+                            <div class="restaurants__description">
+                                <div class="restaurants__name">
+                                    <h3>The Full Palette</h3>
+                                    <p>New York</p>
+                                </div>
+                                <div class="restaurants__fav">
+                                    <div class="voidheart">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                    <div class="filledheart">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="enchantedplate.html">
+                        <div class="restaurants__choice restaurants__choice--2">
+                            <img src="images/restaurants/EnchantedPlate.jpg" alt="The Enchanted Plate restaurant" />
+                            <div class="new">New</div>
+                            <div class="restaurants__description">
+                                <div class="restaurants__name">
+                                    <h3>The Enchanted Plate</h3>
+                                    <p>New York</p>
+                                </div>
+                                <div class="restaurants__fav">
+                                    <div class="voidheart">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                    <div class="filledheart">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="last_two">
+                    <a href="bastille.html">
+                        <div class="restaurants__choice restaurants__choice--3">
+                            <img src="images/restaurants/Bastille.jpg" alt="Bastille restaurant" />
+                            <div class="restaurants__description">
+                                <div class="restaurants__name">
+                                    <h3>Bastille</h3>
+                                    <p>New York</p>
+                                </div>
+                                <div class="restaurants__fav">
+                                    <div class="voidheart">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                    <div class="filledheart">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="legourmand.html">
+                        <div class="restaurants__choice restaurants__choice--4">
+                            <img src="images/restaurants/LeGourmand.jpg" alt="Le Gourmand restaurant" />
+                            <div class="restaurants__description">
+                                <div class="restaurants__name">
+                                    <h3>Le Gourmand</h3>
+                                    <p>New York</p>
+                                </div>
+                                <div class="restaurants__fav">
+                                    <div class="voidheart">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                    <div class="filledheart">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer">
+                <h2>Ohmyfood</h2>
+                <div class="footer__content">
+                    <div class="footer__item">
+                        <i class="fas fa-utensils"></i>
+                        <p>Suggest a restaurant</p>
+                    </div>
+                    <div class="footer__item">
+                        <i class="fas fa-hands-helping"></i>
+                        <p>Become a partner</p>
+                    </div>
+                    <div class="footer__item footer__item__legal">
+                        Legal
+                    </div>
+                    <div class="footer__item footer__item__legal">
+                        <a href="mailto:philippot.yohann@gmail.com">Contact</a>
+                    </div>
+                </div>
             </div>
-            <button class="btn">
-                Explore our restaurants
 
-            </button>
-        </section>
-
-        <section class="instructions">
-            <h2>How it works</h2>
-            <div class="instructions__element">
-                <div class="instructions__element__text">
-                    <p>1</p>
-                </div>
-                <div class="instructions__element__icons">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="instructions__element__content">
-                    <p>Chose a restaurant</p>
-                </div>
-            </div>
-            <div class="instructions__element">
-                <div class="instructions__element__text">
-                    <p>2</p>
-                </div>
-                <div class="instructions__element__icons">
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="instructions__element__content">
-                    <p>Create your menu</p>
-                </div>
-            </div>
-            <div class="instructions__element instructions__element--darker">
-                <div class="instructions__element__text">
-                    <p>3</p>
-                </div>
-                <div class="instructions__element__icons instructions__element__icons--pink">
-                    <i class="fas fa-store"></i>
-                </div>
-                <div class="instructions__element__content">
-                    <p>Go enjoy it at the restaurant</p>
-                </div>
-            </div>
-        </section>
-        <section class="restaurants">
-            <h2>Restaurants</h2>
-            <div class="first_two">
-                <a href="fullpalette.html">
-                    <div class="restaurants__choice restaurants__choice--1">
-                        <img src="images/restaurants/FullPalette.jpg" alt="The Full Palette restaurant" />
-                        <div class="new">New</div>
-                        <div class="restaurants__description">
-                            <div class="restaurants__name">
-                                <h3>The Full Palette</h3>
-                                <p>New York</p>
-                            </div>
-                            <div class="restaurants__fav">
-                                <div class="voidheart">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                                <div class="filledheart">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="enchantedplate.html">
-                    <div class="restaurants__choice restaurants__choice--2">
-                    
-                        <img src="images/restaurants/EnchantedPlate.jpg" alt="The Enchanted Plate restaurant" />
-                        <div class="new">New</div>
-                    
-                        <div class="restaurants__description">
-                            <div class="restaurants__name">
-                                <h3>The Enchanted Plate</h3>
-                                <p>New York</p>
-                            </div>
-                            <div class="restaurants__fav">
-                                <div class="voidheart">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                                <div class="filledheart">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="last_two">
-                <a href="bastille.html">
-                    <div class="restaurants__choice restaurants__choice--3">
-                        <img src="images/restaurants/Bastille.jpg" alt="Bastille restaurant" />
-                        <div class="restaurants__description">
-                            <div class="restaurants__name">
-                                <h3>Bastille</h3>
-                                <p>New York</p>
-                            </div>
-                            <div class="restaurants__fav">
-                                <div class="voidheart">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                                <div class="filledheart">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="legourmand.html">
-                    <div class="restaurants__choice restaurants__choice--4">
-                        <img src="images/restaurants/LeGourmand.jpg" alt="Le Gourmand restaurant" />
-                        <div class="restaurants__description">
-                            <div class="restaurants__name">
-                                <h3>Le Gourmand</h3>
-                                <p>New York</p>
-                            </div>
-                            <div class="restaurants__fav">
-                                <div class="voidheart">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                                <div class="filledheart">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer">
-            <h2>Ohmyfood</h2>
-            <div class="footer__content">
-                <div class="footer__item">
-                    <i class="fas fa-utensils"></i>
-                    <p>Suggest a restaurant</p>
-                </div>
-                <div class="footer__item">
-                    <i class="fas fa-hands-helping"></i>
-                    <p>Become a partner</p>
-                </div>
-                <div class="footer__item footer__item__legal">
-                    Legal
-                </div>
-                <div class="footer__item footer__item__legal">
-                    <a href="mailto:philippot.yohann@gmail.com">Contact</a>
-                </div>
-            </div>
-        </div>
-
-    </footer>
+        </footer>
     </div>
 </body>
 </html>

@@ -1,3 +1,53 @@
+/*style loader + page avant anim body*/
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    .barre {
+        display: inline-block;
+        width: 20px;
+        height: 50px;
+        background-color: #ffffff;
+        border-radius: 10%;
+        animation: loading 1500ms cubic-bezier(0.57, 0.2, 0.57, 0.86);
+        position: relative;
+
+        &--1 {
+            animation-delay: 0.1s;
+        }
+
+        &--2 {
+            animation-delay: 0.25s;
+        }
+
+        &--3 {
+            animation-delay: 0.4s;
+        }
+
+        &--4 {
+            animation-delay: 0.55s;
+        }
+
+        &--5 {
+            animation-delay: 0.7s;
+        }
+
+        &--6 {
+            animation-delay: 0.85s;
+        }
+    }
+}
+
+#page {
+    opacity: 0;
+    animation: body 2500ms 2200ms forwards;
+}
+
+
+/*style section localisation*/
 .localisation{
     display:flex;
     margin-top:0;
@@ -14,6 +64,7 @@
         }      
 }
 
+/* style presentation entreprise */
 .presentation {
     text-align: center;
     background-color: $color-bg;
@@ -31,6 +82,7 @@
     }
 }
 
+/*style instructions d'utilisation du site*/
 .instructions {
     &__element {
         display: flex;
@@ -81,7 +133,7 @@ a{
     text-decoration:none;
 }
 
-
+/*style affichage restaurants*/
 .restaurants {
     background-color: $color-bg;
     padding-right: .5rem;
@@ -174,56 +226,13 @@ a{
         }
     }
 
-
-
-
     h2 {
         @include section_title;
         font-size: $title-size;
         font-family: robotobold, Arial, serif;
     }
 }
-@keyframes disappear{
-    0%{
-        opacity:1
-    }
-    10%{
-        opacity:0;
-    }
-    100%{
-        opacity:0;
-    }   
-}
-@keyframes progressiveheart {
-    0% {
-        
-        transform: scaleZ(0);
-        opacity: 0;
-        transform-origin: bottom;
-    }
 
-    25% {
-        transform: scaleZ(.23);
-        opacity:.1;
-    }
-
-    50% {
-        transform: scaleZ(.47);
-        opacity:.2;
-        
-    }
-
-    75% {
-        transform: scaleZ(.77);
-        opacity:.65;
-    }
-
-    100% {
-        color:$color-primary;
-        transform: scaleZ(1);
-        opacity: 1;
-    }
-}
 /*style menu*/
 .main__menu {
     margin-top: 1rem;
@@ -265,10 +274,10 @@ a{
             margin-bottom: 0;
         }
     }
-
+    /*style entree, plat, dessert*/
     .entree {
         @include margin_menu;
-        animation: entree 2000ms 300ms ease-out both;
+        animation: apparition 2000ms 450ms ease-out both;
 
 
         h3 {
@@ -295,7 +304,7 @@ a{
                 }
 
                 i {
-                    animation: iconspin 1000ms ease-in-out forwards;
+                    animation: iconspin 700ms ease-in-out forwards;
                 }
 
                 .entree__choice__name {
@@ -335,7 +344,6 @@ a{
 
             .checked {
                 @include checked;
-                transform: translateX(-150px);
                 transform: scaleX(0);
                 transition: all 1000ms;
 
@@ -346,226 +354,153 @@ a{
             }
         }
     }
-}
 
+    .dish {
+        @include margin_menu;
+        animation: apparition 2000ms 900ms ease-out both;
 
-@keyframes wrap{
-    0%{
-        width:85%;
-    }
-    50%{
-        width:60%;
-    }
-    100%{
-        width:55%;
-    }
- 
-}
+        h3 {
+            @include menu_title;
 
-@media screen and (min-width:375px){
-    @keyframes wrap{     
-        0%{
-                width:80%;
+            span {
+                border-bottom: 3px solid $color-tertiary;
             }
-        
-        100%{
-                width:55%;
-            }
-    }
-}
-
-@keyframes iconspin{
-    from{
-        transform:rotateZ(0deg);
-    }
-    to{
-        transform:rotateZ(360deg);
-    }
-}
-
-
-@keyframes entree {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.dish {
-    @include margin_menu;
-    animation: dish 2000ms 600ms ease-out both;
-
-    h3 {
-        @include menu_title;
-
-        span {
-            border-bottom: 3px solid $color-tertiary;
         }
-    }
 
-    &__choice {
-        @include menu_choice;
+        &__choice {
+            @include menu_choice;
 
-        &:hover {
+            &:hover {
+                .checked {
+                    transform: scaleX(1);
+                    transition: transform 1000ms;
+                }
+
+                .dish__choice__price {
+                    transition: transform 1000ms;
+                    transform: translateX(-94px);
+                }
+
+                i {
+                    animation: iconspin 700ms ease-in-out forwards;
+                }
+
+                .dish__choice__fullname {
+                    animation: wrap 1000ms ease-in-out both;
+                }
+
+                .dish__choice__name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .dish__choice__description {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &__name {
+                @include menu_name;
+            }
+
+            &__description {
+                @include menu_description;
+            }
+
+            &__price {
+                @include menu_price;
+                transform: translateX(0);
+                transition: transform 1000ms;
+            }
+
             .checked {
-                transform: scaleX(1);
+                @include checked;        
+                transform: scaleX(0);
+                transition: all 1000ms;
+
+                i {
+                    font-size: 1.5rem;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .dessert {
+        @include margin_menu;
+        animation: apparition 2000ms 1350ms ease-out both;
+
+
+        h3 {
+            @include menu_title;
+
+            span {
+                border-bottom: 3px solid $color-tertiary;
+            }
+        }
+
+        &__choice {
+            @include menu_choice;
+
+            &:hover {
+                .checked {
+                    transform:scaleX(1);
+                    transition: transform 1000ms;              
+                }
+
+                .dessert__choice__price {
+                    transition: transform 1000ms;
+                    transform: translateX(-94px);
+                }
+
+                i {
+                    animation: iconspin 700ms ease-in-out forwards;
+                }
+
+                .dessert__choice__fullname {
+                    animation: wrap 1000ms ease-in-out both;
+                }
+
+                .dessert__choice__name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .dessert__choice__description {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &__name {
+                @include menu_name;
+            }
+
+            &__description {
+                @include menu_description;
+            }
+
+            &__price {
+                @include menu_price;
+                transform: translateX(0);
                 transition: transform 1000ms;
             }
 
-            .dish__choice__price {
-                transition: transform 1000ms;
-                transform: translateX(-94px);
-            }
-
-            i {
-                animation: iconspin 1000ms ease-in-out forwards;
-            }
-
-            .dish__choice__fullname {
-                animation: wrap 1000ms ease-in-out both;
-            }
-
-            .dish__choice__name {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .dish__choice__description {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        &__name {
-            @include menu_name;
-        }
-
-        &__description {
-            @include menu_description;
-        }
-
-        &__price {
-            @include menu_price;
-            transform: translateX(0);
-            transition: transform 1000ms;
-        }
-
-        .checked {
-            @include checked;        
-            transform: scaleX(0);
-            transition: all 1000ms;
-
-            i {
-                font-size: 1.5rem;
-                color: #fff;
-            }
-        }
-    }
-}
-
-@keyframes dish {
-    0% {
-        transform:translateY(-50px);
-        opacity:0;
-    }
-
-    100% {
-        transform:translateY(0);
-        opacity:1;
-    }
-}
-
-.dessert {
-    @include margin_menu;
-    animation: dessert 2000ms 900ms ease-out both;
-
-
-    h3 {
-        @include menu_title;
-
-        span {
-            border-bottom: 3px solid $color-tertiary;
-        }
-    }
-
-    &__choice {
-        @include menu_choice;
-
-        &:hover {
             .checked {
-                transform:scaleX(1);
-                transition: transform 1000ms;              
-            }
-
-            .dessert__choice__price {
-                transition: transform 1000ms;
-                transform: translateX(-94px);
-            }
-
-            i {
-                animation: iconspin 1000ms ease-in-out forwards;
-            }
-
-            .dessert__choice__fullname {
-                animation: wrap 1000ms ease-in-out both;
-            }
-
-            .dessert__choice__name {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .dessert__choice__description {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                @include checked;
+                transform:scaleX(0);
+                transition:all 1000ms;
+                i {
+                    font-size: 1.5rem;
+                    color: #fff;
+                }
             }
         }
-
-        &__name {
-            @include menu_name;
-        }
-
-        &__description {
-            @include menu_description;
-        }
-
-        &__price {
-            @include menu_price;
-            transform: translateX(0);
-            transition: transform 1000ms;
-        }
-
-        .checked {
-            @include checked;
-            transform:translateX(-150px);
-            transform:scaleX(0);
-            transition:all 1000ms;
-            i {
-                font-size: 1.5rem;
-                color: #fff;
-            }
-        }
-    }
-}
-
-@keyframes dessert {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
 
@@ -573,78 +508,101 @@ a{
     text-align:center;
 }
 
-#loader {
-    .wrapper {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
+
+/*animation wrap texte*/
+@keyframes wrap {
+    0% {
+        width: 85%;
     }
 
-    .barre {
-        display: inline-block;
-        width: 20px;
-        height: 50px;
-        background-color: #ffffff;
-        border-radius: 10%;
-        animation-name: loading;
-        animation-duration: 1.5s;
-        animation-timing-function: cubic-bezier(0.57, 0.2, 0.57, 0.86);      
-        position: relative;
-
-        &--1 {
-            animation-delay: 0.1s;
-        }
-
-        &--2 {
-            animation-delay: 0.25s;
-        }
-
-        &--3 {
-            animation-delay: 0.4s;
-        }
-
-        &--4 {
-            animation-delay: 0.55s;
-        }
-
-        &--5 {
-            animation-delay: 0.7s;
-        }
-
-        &--6 {
-            animation-delay: 0.85s;
-        }
+    50% {
+        width: 60%;
     }
 
-    @keyframes loading {
+    100% {
+        width: 55%;
+    }
+}
+
+/*ajustements pour l'animation wrap pour differentes tailles*/
+@media screen and (min-width:375px) {
+    @keyframes wrap {
         0% {
-            transform: translateY(-50px);
-            background-color: $color-primary;
-            opacity: .5;
-        }
-
-        50% {
-            transform: translateY(50px);
-            background-color: $color-secondary;
-            opacity: 1;
-        }
-
-        85% {
-            opacity: 1;
+            width: 80%;
         }
 
         100% {
-            transform: translateY(-50px);
-            background-color: $color-tertiary;
-            opacity: 0;
+            width: 55%;
         }
     }
 }
-#page {
-    opacity: 0;
-    animation: body 2500ms 2600ms forwards;
+
+@media screen and (max-width:375px) {
+    @keyframes wrap {
+        0% {
+            width: 80%;
+        }
+
+        30% {
+            width: 60%;
+        }
+
+        100% {
+            width: 50%;
+        }
+    }
 }
+
+/*animation rotation icone coche*/
+@keyframes iconspin {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+/*animation apparition des groupes de plats*/
+@keyframes apparition {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*animations loader et apparition page*/
+@keyframes loading {
+    0% {
+        transform: translateY(-50px);
+        background-color: $color-primary;
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(50px);
+        background-color: $color-secondary;
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50px);
+        background-color: $color-tertiary;
+        opacity: 0;
+    }
+}
+
 @keyframes body {
     from {
         opacity: 0;
@@ -654,6 +612,52 @@ a{
         opacity: 1;
     }
 }
+
+/*animations disparition coeur vide et apparation progressive coeur plein*/
+@keyframes disappear {
+    0% {
+        opacity: 1
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes progressiveheart {
+    0% {
+        transform: scaleZ(0);
+        opacity: 0;
+        transform-origin: bottom;
+    }
+
+    25% {
+        transform: scaleZ(.23);
+        opacity: .1;
+    }
+
+    50% {
+        transform: scaleZ(.47);
+        opacity: .2;
+    }
+
+    75% {
+        transform: scaleZ(.77);
+        opacity: .65;
+    }
+
+    100% {
+        color: $color-primary;
+        transform: scaleZ(1);
+        opacity: 1;
+    }
+}
+
+
 
 @media screen and (min-width:768px) and (max-width:991px){
 /*style responsive tablette de index.html*/
